@@ -308,7 +308,7 @@ ul {
 
 @media (min-width: 900px) {
   .nav { 
-    padding: 8vh 3vw; 
+    padding: 5vh 3vw; 
     height: 10vh; }
   .nav-logo-img { 
     height: 12vh; 
