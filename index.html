@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>uKKo Panes — El pan detrás de la mejor hamburguesa</title>
+  <meta name="description" content="uKKo Panes. Producción de precisión. 7 variedades de buns para hamburgueserías y venta al público. Posadas, Misiones.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- =============================================
+     NAVIGATION
+     ============================================= -->
+<nav class="nav">
+  <a class="nav-logo" href="#inicio">
+    <img src="img/ukko_logo_harina.svg" alt="uKKo Panes" class="nav-logo-img">
+    <span class="nav-logo-text">Ukko Panes</span>
+  </a>
+
+  <!-- Desktop links -->
+  <ul class="nav-desktop-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#b2b">Para locales</a></li>
+    <li><a href="#retail">Minorista</a></li>
+  </ul>
+
+  <button class="nav-cta-desktop" onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">
+    Hacer un pedido
+  </button>
+
+  <!-- Mobile toggle -->
+  <button class="nav-toggle" id="navToggle" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="nav-menu" id="navMenu">
+  <ul>
+    <li><a href="#nosotros" class="nav-menu-link">Nosotros</a></li>
+    <li><a href="#proceso" class="nav-menu-link">Proceso</a></li>
+    <li><a href="#productos" class="nav-menu-link">Productos</a></li>
+    <li><a href="#b2b" class="nav-menu-link">Para locales</a></li>
+    <li><a href="#retail" class="nav-menu-link">Minorista</a></li>
+    <li><a href="#disponible" class="nav-menu-link">Stock hoy</a></li>
+    <li><a href="#pedido" class="nav-menu-link">Pedidos</a></li>
+  </ul>
+  <div class="nav-menu-footer">
+    <a href="#pedido" class="nav-cta-mobile nav-menu-link">Hacer un pedido</a>
+  </div>
+</div>
+
+
+<!-- =============================================
+     HERO
+     ============================================= -->
+<section class="hero" id="inicio">
+  <div class="hero-bg ph">
+    <div class="ph-inner">
+    </div>
+  </div>
+
+  <div class="hero-gradient"></div>
+  <div class="hero-grain"></div>
+
+  <div class="hero-content fade-left">
+    <div class="hero-eyebrow">Posadas, Misiones</div>
+    <h1 class="hero-title">
+      el pan<br>
+      detrás de<br>
+      <em>la mejor<br>burger.</em>
+    </h1>
+    <p class="hero-subtitle">Producción de precisión. El proveedor que no falla.</p>
+    <div class="hero-actions">
+      <button class="btn btn-brasa" onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">Hacer un pedido</button>
+      <button class="btn btn-outline-light" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Ver la línea</button>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="hero-scroll-line"></div>
+    <div class="hero-scroll-txt">scroll</div>
+  </div>
+</section>
+
+
+<!-- =============================================
+     MARQUEE
+     ============================================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Classic Bun</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Sesame Bun</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Potato Roll</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Brioche</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Cheese Bun</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Baguettin</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Slider</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Entrega diaria</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Posadas</span><span class="marquee-sep">·</span>
+    <!-- duplicado para loop infinito -->
+    <span class="marquee-item">Classic Bun</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Sesame Bun</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Potato Roll</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Brioche</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Cheese Bun</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Baguettin</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Slider</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Entrega diaria</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Posadas</span><span class="marquee-sep">·</span>
+  </div>
+</div>
+
+
+<!-- =============================================
+     NOSOTROS
+     ============================================= -->
+<section id="nosotros">
+  <div class="wrap">
+    <div class="nosotros-grid">
+
+      <div class="nosotros-img-wrap fade-left">
+        <!--
+        ╔══════════════════════════════════════════╗
+        ║  FOTO NOSOTROS — Retrato vertical 3:4    ║
+        ║                                           ║
+        ║  El panadero de perfil o mirando hacia   ║
+        ║  abajo, controlando proceso:             ║
+        ║  — Revisando temperatura en display      ║
+        ║  — Ajustando bandeja en horno            ║
+        ║  — De pie frente a la fermentadora       ║
+        ║                                           ║
+        ║  NO mirando a cámara. Ambiente real.     ║
+        ║  Grano alto, bajo contraste.             ║
+        ║  Formato: vertical 3:4                   ║
+        ╚══════════════════════════════════════════╝
+        -->
+        <div class="nosotros-img ph">
+          <div class="ph-inner">
+            <div class="ph-icon">
+            </div>
+          </div>
+        </div>
+        <div class="nosotros-badge">
+          <div class="nosotros-badge-num">#1</div>
+          <div class="nosotros-badge-txt">Proveedor<br>de buns en<br>Posadas</div>
+        </div>
+      </div>
+
+      <div class="nosotros-content fade-right">
+        <div class="sec-label">Nosotros</div>
+        <h2 class="sec-title">Precisión.<br><strong>Todos los días.</strong></h2>
+        <p class="nosotros-body">
+          Ukko es el proveedor de panes de hamburguesa más importante de Posadas. <br>
+          Amasadora, fermentadora, hornos industriales. <br>
+          Nuestra tecnología es lo que garantiza que cada bandeja sea igual a la anterior.
+        </p>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">7</div>
+            <div class="stat-lbl">Variedades de panes</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">6</div>
+            <div class="stat-lbl">Días por semana</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">+3</div>
+            <div class="stat-lbl">Años de producción</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =============================================
+     PROCESO
+     ============================================= -->
+<section id="proceso">
+  <div class="wrap">
+    <div class="proceso-header fade-up">
+      <div>
+        <div class="sec-label">Cómo lo hacemos</div>
+        <h2 class="sec-title"><strong>El proceso.</strong><br>Sin atajos.</h2>
+      </div>
+      <p class="sec-desc" style="margin-top:16px">
+        Tecnología industrial con criterio de panadero. <br>
+        La máquina hace el volumen. El panadero controla la calidad.
+      </p>
+    </div>
+  </div>
+
+  <div class="proceso-steps fade-up">
+
+    <!--
+    ╔══════════════════════════════════════════════╗
+    ║  FOTO PASO 1 — La amasadora                  ║
+    ║  Máquina industrial en funcionamiento.       ║
+    ║  Masa siendo trabajada. Ambiente real.       ║
+    ║  Ángulo: frontal o 3/4. Desaturado.         ║
+    ╚══════════════════════════════════════════════╝
+    -->
+    <div class="paso">
+      <div class="paso-img ph">
+        <div class="ph-inner">
+          <div class="ph-type">Foto proceso 01</div>
+          <div class="ph-desc">La amasadora industrial en funcionamiento</div>
+        </div>
+      </div>
+      <div class="paso-body">
+        <div class="paso-num">01</div>
+        <div class="paso-title">Mezclado</div>
+        <p class="paso-desc">Tiempo y temperatura exactos. La amasadora industrial garantiza una hidratación uniforme en cada tanda.</p>
+      </div>
+    </div>
+
+    <!--
+    ╔══════════════════════════════════════════════╗
+    ║  FOTO PASO 2 — La fermentadora               ║
+    ║  Cámara de fermentación controlada.          ║
+    ║  Display con temperatura visible si posible. ║
+    ║  Buns en reposo, ambiente industrial.        ║
+    ╚══════════════════════════════════════════════╝
+    -->
+    <div class="paso">
+      <div class="paso-img ph">
+        <div class="ph-inner">
+          <div class="ph-type">Foto proceso 02</div>
+          <div class="ph-desc">Fermentadora controlada. Buns en reposo, display de temperatura</div>
+        </div>
+      </div>
+      <div class="paso-body">
+        <div class="paso-num">02</div>
+        <div class="paso-title">Fermentación</div>
+        <p class="paso-desc">Temperatura y humedad controladas al grado. El tiempo justo — ni más, ni menos.</p>
+      </div>
+    </div>
+
+    <!--
+    ╔══════════════════════════════════════════════╗
+    ║  FOTO PASO 3 — El horno                      ║
+    ║  Puerta del horno industrial entreabierta.   ║
+    ║  Luz de fuego interior visible. Vapor.       ║
+    ║  Atmosférica, oscura, potente.              ║
+    ╚══════════════════════════════════════════════╝
+    -->
+    <div class="paso">
+      <div class="paso-img ph">
+        <div class="ph-inner">
+          <div class="ph-type">Foto proceso 03</div>
+          <div class="ph-desc">Horno industrial entreabierto. Luz interior, vapor, atmósfera</div>
+        </div>
+      </div>
+      <div class="paso-body">
+        <div class="paso-num">03</div>
+        <div class="paso-title">Cocción</div>
+        <p class="paso-desc">Hornos industriales calibrados. La corteza perfecta no es azar — es repetición exacta.</p>
+      </div>
+    </div>
+
+    <!--
+    ╔══════════════════════════════════════════════╗
+    ║  FOTO PASO 4 — Control de calidad            ║
+    ║  Bandejas perfectas recién salidas.          ║
+    ║  Manos del panadero revisando piezas.        ║
+    ║  Vista cenital o frontal. Luz natural.       ║
+    ╚══════════════════════════════════════════════╝
+    -->
+    <div class="paso">
+      <div class="paso-img ph">
+        <div class="ph-inner">
+          <div class="ph-type">Foto proceso 04</div>
+          <div class="ph-desc">Bandejas perfectas recién salidas. Manos del panadero revisando</div>
+        </div>
+      </div>
+      <div class="paso-body">
+        <div class="paso-num">04</div>
+        <div class="paso-title">Control</div>
+        <p class="paso-desc">Cada pieza revisada. Cada bandeja aprobada. Lo que llega a tu local pasó por este control.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =============================================
+     PRODUCTOS
+     ============================================= -->
+<section id="productos">
+
+  <div class="prod-header fade-up">
+    <div class="sec-label">La línea</div>
+    <h2 class="sec-title" style="color:var(--carbon)"><strong>7 variedades.</strong><br>Una para cada burger.</h2>
+    <div class="prod-tabs">
+      <button class="prod-tab active" data-filter="all">Todos</button>
+      <button class="prod-tab" data-filter="bun">Buns redondos</button>
+      <button class="prod-tab" data-filter="especial">Formatos especiales</button>
+    </div>
+  </div>
+
+  <div class="prod-scroll-wrap">
+    <div class="prod-scroll" id="prodScroll">
+
+      <!--
+      ════════════════════════════════════════════
+      FOTOS DE PRODUCTO — Criterio para las 7:
+      — Plano cenital sobre superficie negra/oscura
+      — Un solo producto por foto, sin props
+      — Luz lateral rasante para mostrar textura
+      — Puede incluir variante: bun entero arriba,
+        bun cortado abajo mostrando la miga
+      — Desaturado o B&N
+      ════════════════════════════════════════════
+      -->
+
+      <!-- CARD 01 -->
+      <div class="prod-card" data-cat="bun">
+        <div class="prod-card-img ph">
+          <div class="ph-inner">
+            <div class="ph-type">Foto producto</div>
+            <div class="ph-desc">Classic Bun entero + cortado. Cenital, sup. negra, luz rasante</div>
+          </div>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-card-code">UKK-001</div>
+          <div class="prod-card-name">Classic Bun</div>
+          <p class="prod-card-desc">El estándar. Miga cerrada y uniforme, corteza suave, altura consistente. Para smash burgers y clásicas.</p>
+          <div class="prod-card-specs">
+            <div class="pcs"><div class="pcs-l">Peso</div><div class="pcs-v">80g</div></div>
+            <div class="pcs"><div class="pcs-l">Diámetro</div><div class="pcs-v">11cm</div></div>
+            <div class="pcs"><div class="pcs-l">Miga</div><div class="pcs-v">Cerrada</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 02 -->
+      <div class="prod-card" data-cat="bun">
+        <div class="prod-card-img ph">
+          <div class="ph-inner">
+            <div class="ph-type">Foto producto</div>
+            <div class="ph-desc">Sesame Bun — tapa con sésamo visible. Cenital, luz lateral</div>
+          </div>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-card-code">UKK-002</div>
+          <div class="prod-card-name">Sesame Bun</div>
+          <p class="prod-card-desc">Idéntico al Classic en estructura. El sésamo tostado aporta diferenciación visual y sabor desde el primer vistazo.</p>
+          <div class="prod-card-specs">
+            <div class="pcs"><div class="pcs-l">Peso</div><div class="pcs-v">82g</div></div>
+            <div class="pcs"><div class="pcs-l">Diámetro</div><div class="pcs-v">11cm</div></div>
+            <div class="pcs"><div class="pcs-l">Tapa</div><div class="pcs-v">Sésamo</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 03 -->
+      <div class="prod-card" data-cat="bun">
+        <div class="prod-card-img ph">
+          <div class="ph-inner">
+            <div class="ph-type">Foto producto</div>
+            <div class="ph-desc">Potato Roll cortado — miga muy abierta visible. Cenital, sup. negra</div>
+          </div>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-card-badge">Más pedido</div>
+          <div class="prod-card-code">UKK-003</div>
+          <div class="prod-card-name">Potato Roll</div>
+          <p class="prod-card-desc">Alta hidratación, miga muy suave. Absorbe jugos sin colapsar. Ideal para pulled pork, crispy chicken y proteínas jugosas.</p>
+          <div class="prod-card-specs">
+            <div class="pcs"><div class="pcs-l">Peso</div><div class="pcs-v">88g</div></div>
+            <div class="pcs"><div class="pcs-l">Diámetro</div><div class="pcs-v">11cm</div></div>
+            <div class="pcs"><div class="pcs-l">Miga</div><div class="pcs-v">Abierta</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 04 -->
+      <div class="prod-card" data-cat="bun">
+        <div class="prod-card-img ph">
+          <div class="ph-inner">
+            <div class="ph-type">Foto producto</div>
+            <div class="ph-desc">Brioche — superficie brillante visible. Miga filante al corte</div>
+          </div>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-card-badge">Premium</div>
+          <div class="prod-card-code">UKK-004</div>
+          <div class="prod-card-name">Brioche</div>
+          <p class="prod-card-desc">Alto contenido graso, miga filante, toque levemente dulce. Para burgers de carta diferenciada donde el pan suma sabor propio.</p>
+          <div class="prod-card-specs">
+            <div class="pcs"><div class="pcs-l">Peso</div><div class="pcs-v">92g</div></div>
+            <div class="pcs"><div class="pcs-l">Diámetro</div><div class="pcs-v">11cm</div></div>
+            <div class="pcs"><div class="pcs-l">Miga</div><div class="pcs-v">Filante</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 05 -->
+      <div class="prod-card" data-cat="bun">
+        <div class="prod-card-img ph">
+          <div class="ph-inner">
+            <div class="ph-type">Foto producto</div>
+            <div class="ph-desc">Cheese Bun — corte mostrando queso integrado en la miga</div>
+          </div>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-card-code">UKK-005</div>
+          <div class="prod-card-name">Cheese Bun</div>
+          <p class="prod-card-desc">Queso incorporado en la masa — no en la superficie. El sabor está dentro. Identidad propia desde el pan.</p>
+          <div class="prod-card-specs">
+            <div class="pcs"><div class="pcs-l">Peso</div><div class="pcs-v">88g</div></div>
+            <div class="pcs"><div class="pcs-l">Diámetro</div><div class="pcs-v">11cm</div></div>
+            <div class="pcs"><div class="pcs-l">Sabor</div><div class="pcs-v">Queso</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 06 -->
+      <div class="prod-card" data-cat="especial">
+        <div class="prod-card-img ph">
+          <div class="ph-inner">
+            <div class="ph-type">Foto producto</div>
+            <div class="ph-desc">Baguettin completo — formato alargado. Vista lateral, sup. oscura</div>
+          </div>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-card-code">UKK-006</div>
+          <div class="prod-card-name">Baguettin</div>
+          <p class="prod-card-desc">Formato alargado, textura blanda. No es una baguette crujiente — es un pan de sándwich suave tipo panini. Versátil.</p>
+          <div class="prod-card-specs">
+            <div class="pcs"><div class="pcs-l">Peso</div><div class="pcs-v">85g</div></div>
+            <div class="pcs"><div class="pcs-l">Largo</div><div class="pcs-v">20cm</div></div>
+            <div class="pcs"><div class="pcs-l">Textura</div><div class="pcs-v">Blanda</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 07 -->
+      <div class="prod-card" data-cat="especial">
+        <div class="prod-card-img ph">
+          <div class="ph-inner">
+            <div class="ph-type">Foto producto</div>
+            <div class="ph-desc">Slider — mini formato en grupo de 4. Cenital, sup. oscura</div>
+          </div>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-card-code">UKK-007</div>
+          <div class="prod-card-name">Slider</div>
+          <p class="prod-card-desc">Formato mini, misma calidad que el Classic. Para menús de degustación y combos de sharing. Del tamaño de una figazzita.</p>
+          <div class="prod-card-specs">
+            <div class="pcs"><div class="pcs-l">Peso</div><div class="pcs-v">40g</div></div>
+            <div class="pcs"><div class="pcs-l">Diámetro</div><div class="pcs-v">7cm</div></div>
+            <div class="pcs"><div class="pcs-l">Miga</div><div class="pcs-v">Cerrada</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /prod-scroll -->
+  </div><!-- /prod-scroll-wrap -->
+
+  <div class="prod-hint">
+    <span class="prod-hint-txt">Deslizá para ver todos</span>
+    <div class="prod-arrows">
+      <button class="prod-arrow" id="prodPrev" aria-label="Anterior">&#8592;</button>
+      <button class="prod-arrow" id="prodNext" aria-label="Siguiente">&#8594;</button>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- =============================================
+     PARA HAMBURGUESERÍAS (B2B)
+     ============================================= -->
+<section id="b2b">
+  <div class="split-grid">
+
+    <!--
+    ╔══════════════════════════════════════════════╗
+    ║  FOTO B2B                                    ║
+    ║  Bandejas perfectas en fila — vista          ║
+    ║  cenital o levemente inclinada.              ║
+    ║  La belleza de la repetición exacta.         ║
+    ║  Fondo oscuro, buns uniformes, sin adornos. ║
+    ║  Esta foto debe comunicar VOLUMEN Y          ║
+    ║  CONSISTENCIA industrial.                    ║
+    ║  Formato: cuadrado o vertical.              ║
+    ╚══════════════════════════════════════════════╝
+    -->
+    <div class="split-img ph fade-left">
+      <div class="ph-inner">
+        <div class="ph-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="1" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/><path d="M7 5V3M12 5V3M17 5V3" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="ph-type">Foto B2B — producción</div>
+        <div class="ph-desc">Bandejas en fila, vista cenital. Uniformidad, volumen, consistencia industrial</div>
+      </div>
+    </div>
+
+    <div class="split-content fade-right">
+      <div class="sec-label">Para hamburgueserías</div>
+      <h2 class="sec-title">El proveedor<br><strong>que no falla.</strong></h2>
+      <p class="sec-desc" style="margin-top:10px;margin-bottom:0">
+        Detrás de las mejores hamburgueserías de Posadas hay un denominador común.
+      </p>
+      <div class="split-features">
+        <div class="split-feat">
+          <div class="split-feat-dot"></div>
+          <p class="split-feat-txt"><strong>Entrega diaria</strong> — llega fresco antes de que abras.</p>
+        </div>
+        <div class="split-feat">
+          <div class="split-feat-dot"></div>
+          <p class="split-feat-txt"><strong>7 variedades</strong> para cada concepto de carta.</p>
+        </div>
+        <div class="split-feat">
+          <div class="split-feat-dot"></div>
+          <p class="split-feat-txt"><strong>Volumen sin problema</strong> — escala según tu demanda.</p>
+        </div>
+        <div class="split-feat">
+          <div class="split-feat-dot"></div>
+          <p class="split-feat-txt"><strong>Consistencia garantizada</strong> — cada bandeja igual a la anterior.</p>
+        </div>
+        <div class="split-feat">
+          <div class="split-feat-dot"></div>
+          <p class="split-feat-txt"><strong>Asesoramiento</strong> — te ayudamos a elegir el bun ideal para tu burger.</p>
+        </div>
+      </div>
+      <div class="split-actions">
+        <button class="btn btn-brasa" onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">Quiero ser cliente</button>
+        <button class="btn btn-outline-light" onclick="document.getElementById('disponible').scrollIntoView({behavior:'smooth'})">Ver stock hoy</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =============================================
+     MINORISTA (RETAIL)
+     ============================================= -->
+<section id="retail">
+  <div class="retail-grid">
+
+    <div class="retail-content fade-left">
+      <div class="sec-label" style="--brasa:#C4622D">Para vos</div>
+      <h2 class="sec-title">El mismo bun.<br><strong>Para tu casa.</strong></h2>
+      <p class="sec-desc" style="margin-top:10px;margin-bottom:0;color:var(--gmd)">
+        Los mismos buns que usan los mejores locales de Posadas, disponibles para venta al público.
+      </p>
+      <div class="retail-features">
+        <div class="retail-feat">
+          <div class="retail-feat-dot"></div>
+          <p class="retail-feat-txt"><strong>Venta directa</strong> desde el local por WhatsApp.</p>
+        </div>
+        <div class="retail-feat">
+          <div class="retail-feat-dot"></div>
+          <p class="retail-feat-txt"><strong>Pedido mínimo</strong> desde 6 unidades.</p>
+        </div>
+        <div class="retail-feat">
+          <div class="retail-feat-dot"></div>
+          <p class="retail-feat-txt"><strong>Retiro en local</strong> o coordinar entrega.</p>
+        </div>
+        <div class="retail-feat">
+          <div class="retail-feat-dot"></div>
+          <p class="retail-feat-txt"><strong>Horneado esa mañana</strong> — siempre fresco.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-dark" onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">Encargar por WhatsApp</button>
+        <button class="btn btn-outline-dark" onclick="document.getElementById('disponible').scrollIntoView({behavior:'smooth'})">Qué hay hoy</button>
+      </div>
+    </div>
+
+    <!--
+    ╔══════════════════════════════════════════════╗
+    ║  FOTO RETAIL — La hamburguesa terminada      ║
+    ║                                              ║
+    ║  Una burger bien armada con bun uKKo,        ║
+    ║  en el contexto de una mesa / cocina         ║
+    ║  doméstica o de local.                       ║
+    ║  Luz natural, ambiente cálido.               ║
+    ║  Desaturada, colores neutros.                ║
+    ║  Bun claramente protagonista.                ║
+    ║  Formato: cuadrado o vertical.              ║
+    ╚══════════════════════════════════════════════╝
+    -->
+    <div class="retail-img ph fade-right">
+      <div class="ph-inner">
+        <div class="ph-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M3 11h18M5 11c0-3.866 3.134-7 7-7s7 3.134 7 7M5 11v2a7 7 0 0014 0v-2" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="ph-type">Foto retail — burger terminada</div>
+        <div class="ph-desc">Hamburguesa armada con bun uKKo. Luz natural, ambiente doméstico o de local. Neutro</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =============================================
+     GALERÍA EDITORIAL
+     ============================================= -->
+<section id="galeria">
+
+  <div class="wrap">
+    <div class="galeria-header fade-up">
+      <div>
+        <div class="sec-label">Galería</div>
+        <h2 class="sec-title"><strong>El pan<br>en contexto.</strong></h2>
+      </div>
+      <a href="https://instagram.com/ukkopanes" target="_blank" rel="noopener" class="btn btn-outline-light" style="align-self:flex-end">Ver @ukkopanes</a>
+    </div>
+  </div>
+
+  <!--
+  GRILLA FOTOGRÁFICA — 5 imágenes
+  Criterio para las 5 fotos:
+
+  [G1 — GRANDE, ocupa 2 filas]
+  Bandejas de buns vistas desde arriba (cenital).
+  Perfecta uniformidad, fondo oscuro.
+  Es la foto "de tapa" de la galería.
+
+  [G2] Bun cortado al medio — miga visible.
+  Luz rasante lateral, superficie negra.
+
+  [G3] La burger terminada en el local cliente.
+  Ambiente, luz natural, desaturada.
+
+  [G4] El horno — puerta entreabierta, luz interior.
+  Atmosférica, vapor visible.
+
+  [G5] Plano muy cerrado de corteza.
+  Textura, casi abstracta, B&N.
+  -->
+
+  <div class="galeria-grid">
+    <div class="gal-item gal-tall ph fade-left">
+      <div class="ph-inner">
+        <div class="ph-type">Galería 01 — Hero</div>
+        <div class="ph-desc">Cenital bandejas. Uniformidad perfecta, fondo oscuro</div>
+      </div>
+      <div class="gal-overlay"><span class="gal-overlay-txt">Producción</span></div>
+    </div>
+    <div class="gal-item ph fade-up" style="transition-delay:.1s">
+      <div class="ph-inner">
+        <div class="ph-type">Galería 02</div>
+        <div class="ph-desc">Miga al corte, luz rasante</div>
+      </div>
+      <div class="gal-overlay"><span class="gal-overlay-txt">Miga</span></div>
+    </div>
+    <div class="gal-item ph fade-up" style="transition-delay:.2s">
+      <div class="ph-inner">
+        <div class="ph-type">Galería 03</div>
+        <div class="ph-desc">Burger terminada en local. Ambiente</div>
+      </div>
+      <div class="gal-overlay"><span class="gal-overlay-txt">En el local</span></div>
+    </div>
+    <div class="gal-item ph fade-right" style="transition-delay:.1s">
+      <div class="ph-inner">
+        <div class="ph-type">Galería 04</div>
+        <div class="ph-desc">Horno entreabierto. Luz interior, vapor</div>
+      </div>
+      <div class="gal-overlay"><span class="gal-overlay-txt">El horno</span></div>
+    </div>
+    <div class="gal-item ph fade-right" style="transition-delay:.2s">
+      <div class="ph-inner">
+        <div class="ph-type">Galería 05</div>
+        <div class="ph-desc">Corteza de cerca. Textura, casi abstracta, B&N</div>
+      </div>
+      <div class="gal-overlay"><span class="gal-overlay-txt">Corteza</span></div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- =============================================
+     TESTIMONIOS
+     ============================================= -->
+<section id="testimonios">
+  <div class="wrap">
+    <div class="test-header fade-up">
+      <div class="sec-label">Clientes</div>
+      <h2 class="sec-title"><strong>Lo que dicen</strong><br>los locales.</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-item fade-up" style="transition-delay:.05s">
+        <div class="test-quote">"</div>
+        <p class="test-body">Cambiamos a uKKo hace un año y nunca más tuvimos problema de stock ni de calidad. El Classic Bun aguanta todo lo que le ponemos encima.</p>
+        <div class="test-author">Responsable de compras</div>
+        <div class="test-loc">Hamburguesería — Posadas centro</div>
+      </div>
+      <div class="test-item fade-up" style="transition-delay:.12s">
+        <div class="test-quote">"</div>
+        <p class="test-body">El Brioche cambió nuestra carta premium. Clientes que antes pedían cualquier burger ahora piden específicamente la que tiene brioche.</p>
+        <div class="test-author">Chef propietario</div>
+        <div class="test-loc">Burger bar — Posadas</div>
+      </div>
+      <div class="test-item fade-up" style="transition-delay:.2s">
+        <div class="test-quote">"</div>
+        <p class="test-body">Entrega puntual, siempre fresco, y si algún día necesitás más cantidad por evento, tienen margen. Eso no es fácil de conseguir en Posadas.</p>
+        <div class="test-author">Dueño</div>
+        <div class="test-loc">Hamburguesería — Posadas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =============================================
+     PEDIDO / CONTACTO
+     ============================================= -->
+<section id="pedido">
+  <div class="wrap">
+    <div class="fade-up">
+      <div class="sec-label">Contacto</div>
+      <h2 class="sec-title" style="color:var(--carbon)"><strong>Hacé tu pedido.</strong></h2>
+      <p class="sec-desc">B2B o minorista — mismo compromiso, distinto volumen.</p>
+    </div>
+
+    <div class="pedido-grid">
+
+      <!-- FORMULARIO -->
+      <div class="pedido-form-wrap fade-left">
+        <div class="tipo-selector">
+          <div class="tipo-opt active" id="tipoB2b" onclick="setTipo('b2b')">
+            <span>Para mi local</span>
+          </div>
+          <div class="tipo-opt" id="tipoRetail" onclick="setTipo('retail')">
+            <span>Para mi casa</span>
+          </div>
+        </div>
+
+        <form id="pedidoForm" onsubmit="handleForm(event)">
+          <div class="form-group" id="localGroup">
+            <label class="form-label" for="local">Local / Nombre</label>
+            <input class="form-input" type="text" id="local" name="local" placeholder="Nombre de tu hamburguesería o tu nombre" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="producto">Producto y cantidad</label>
+            <input class="form-input" type="text" id="producto" name="producto" placeholder="ej: Classic Bun x24, Brioche x12">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fecha">Fecha de entrega</label>
+              <input class="form-input" type="date" id="fecha" name="fecha">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="tel">WhatsApp</label>
+              <input class="form-input" type="tel" id="tel" name="tel" placeholder="+54 376...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="nota">Nota adicional</label>
+            <textarea class="form-textarea" id="nota" name="nota" placeholder="Cualquier detalle extra..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Enviar pedido</button>
+        </form>
+      </div>
+
+      <!-- INFO DE CONTACTO -->
+      <div class="pedido-info fade-right">
+        <div class="pedido-info-title">También por WhatsApp</div>
+        <p class="pedido-info-body">
+          Si preferís coordinarlo directamente, escribinos. Respondemos todos los días antes de las 8am.
+        </p>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" stroke="white" stroke-width="1.2"/><path d="M8 10h8M8 14h5" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="contact-lbl">WhatsApp</div>
+              <div class="contact-val">Consultar por DM</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.2"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.2"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+            </div>
+            <div>
+              <div class="contact-lbl">Instagram</div>
+              <div class="contact-val">@ukkopanes</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7z" stroke="white" stroke-width="1.2"/><circle cx="12" cy="9" r="2.5" stroke="white" stroke-width="1.2"/></svg>
+            </div>
+            <div>
+              <div class="contact-lbl">Ubicación</div>
+              <div class="contact-val">Posadas, Misiones</div>
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/54XXXXXXXXXX" target="_blank" rel="noopener" class="contact-cta">
+          <span class="contact-cta-txt">Escribir por WhatsApp ahora</span>
+          <span class="contact-cta-arrow">&#8594;</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =============================================
+     INSTAGRAM FEED
+     ============================================= -->
+<section id="instagram">
+  <div class="wrap">
+    <div class="ig-header fade-up">
+      <div class="ig-handle">@ukkopanes</div>
+      <a href="https://instagram.com/ukkopanes" target="_blank" rel="noopener" class="ig-link">
+        Ver Instagram &#8599;
+      </a>
+    </div>
+  </div>
+
+  <!--
+  GRILLA INSTAGRAM — 6 posts (3 mobile, 6 desktop)
+  Fotos de Instagram deben ser cuadradas 1:1.
+  Mezcla de:
+  — Producto solo (bun sobre fondo negro)
+  — Burger terminada
+  — Proceso (bandejas, horno)
+  — Disponibilidad del día (texto sobre fondo oscuro con el logo)
+  — Behind the scenes
+  Mismos criterios de edición: desaturado, neutro, oscuro.
+  -->
+  <div class="ig-grid fade-up" style="transition-delay:.1s">
+    <div class="ig-item ph">
+      <div class="ph-inner"><div class="ph-type">IG 01</div><div class="ph-desc">Bun solo, cenital</div></div>
+      <div class="ig-hover"><span class="ig-hover-txt">+</span></div>
+    </div>
+    <div class="ig-item ph">
+      <div class="ph-inner"><div class="ph-type">IG 02</div><div class="ph-desc">Burger terminada</div></div>
+      <div class="ig-hover"><span class="ig-hover-txt">+</span></div>
+    </div>
+    <div class="ig-item ph">
+      <div class="ph-inner"><div class="ph-type">IG 03</div><div class="ph-desc">Bandejas / horno</div></div>
+      <div class="ig-hover"><span class="ig-hover-txt">+</span></div>
+    </div>
+    <div class="ig-item ph">
+      <div class="ph-inner"><div class="ph-type">IG 04</div><div class="ph-desc">Disponible hoy — texto</div></div>
+      <div class="ig-hover"><span class="ig-hover-txt">+</span></div>
+    </div>
+    <div class="ig-item ph">
+      <div class="ph-inner"><div class="ph-type">IG 05</div><div class="ph-desc">Behind the scenes</div></div>
+      <div class="ig-hover"><span class="ig-hover-txt">+</span></div>
+    </div>
+    <div class="ig-item ph">
+      <div class="ph-inner"><div class="ph-type">IG 06</div><div class="ph-desc">Miga al corte</div></div>
+      <div class="ig-hover"><span class="ig-hover-txt">+</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =============================================
+     FOOTER
+     ============================================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand-logo">
+          <img src="ukko-logo.svg" alt="uKKo" style="width:36px;height:36px;object-fit:contain">
+          <span class="footer-brand-name">uKKo panes</span>
+        </div>
+        <p class="footer-brand-desc">
+          Producción de precisión. El proveedor de buns más importante de Posadas.
+          Para hamburgueserías y venta al público.
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">La línea</div>
+        <div class="footer-links">
+          <a href="#productos">Classic Bun</a>
+          <a href="#productos">Sesame Bun</a>
+          <a href="#productos">Potato Roll</a>
+          <a href="#productos">Brioche</a>
+          <a href="#productos">Cheese Bun</a>
+          <a href="#productos">Baguettin</a>
+          <a href="#productos">Slider</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Clientes</div>
+        <div class="footer-links">
+          <a href="#b2b">Para hamburgueserías</a>
+          <a href="#retail">Venta al público</a>
+          <a href="#disponible">Stock del día</a>
+          <a href="#pedido">Hacer un pedido</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contacto</div>
+        <div class="footer-links">
+          <a href="https://instagram.com/ukkopanes" target="_blank" rel="noopener">@ukkopanes</a>
+          <a href="https://wa.me/54XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="#nosotros">Posadas, Misiones</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 uKKo Panes. Posadas, Misiones, Argentina.</p>
+      <div class="footer-legal">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- =============================================
+     JAVASCRIPT
+     ============================================= -->
+<script>
+/* --- Nav mobile toggle --- */
+const toggle = document.getElementById('navToggle');
+const menu   = document.getElementById('navMenu');
+
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('open');
+  menu.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+});
+
+document.querySelectorAll('.nav-menu-link').forEach(link => {
+  link.addEventListener('click', () => {
+    toggle.classList.remove('open');
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+/* --- Scroll animations --- */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => observer.observe(el));
+
+/* --- Product scroll arrows --- */
+const scroll = document.getElementById('prodScroll');
+const CARD_W = 302; // card width + gap
+
+document.getElementById('prodNext').addEventListener('click', () => {
+  scroll.scrollBy({ left: CARD_W, behavior: 'smooth' });
+});
+document.getElementById('prodPrev').addEventListener('click', () => {
+  scroll.scrollBy({ left: -CARD_W, behavior: 'smooth' });
+});
+
+/* --- Product tabs --- */
+document.querySelectorAll('.prod-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.prod-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const filter = tab.dataset.filter;
+    document.querySelectorAll('.prod-card').forEach(card => {
+      const show = filter === 'all' || card.dataset.cat === filter;
+      card.style.display = show ? 'flex' : 'none';
+    });
+    scroll.scrollTo({ left: 0, behavior: 'smooth' });
+  });
+});
+
+/* --- Pedido tipo selector --- */
+function setTipo(tipo) {
+  document.getElementById('tipoB2b').classList.toggle('active', tipo === 'b2b');
+  document.getElementById('tipoRetail').classList.toggle('active', tipo === 'retail');
+  const lbl = document.querySelector('label[for="local"]');
+  const inp  = document.getElementById('local');
+  if (tipo === 'b2b') {
+    lbl.textContent = 'Local / Hamburguesería';
+    inp.placeholder  = 'Nombre de tu hamburguesería';
+  } else {
+    lbl.textContent = 'Nombre';
+    inp.placeholder  = 'Tu nombre';
+  }
+}
+
+/* --- Form submit --- */
+function handleForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = 'Enviado ✓';
+  btn.style.background = '#4a9e6b';
+  setTimeout(() => {
+    btn.textContent = 'Enviar pedido';
+    btn.style.background = '';
+    e.target.reset();
+  }, 3000);
+}
+
+/* --- Nav bg on scroll --- */
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  nav.style.borderBottomColor = window.scrollY > 60
+    ? 'rgba(255,255,255,.10)'
+    : 'rgba(255,255,255,.06)';
+}, { passive: true });
+</script>
+
+</body>
+</html>

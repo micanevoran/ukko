@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>uKKo Panes — Identidad de Marca</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      /* — NEGROS & CARBONES — */
+      --color-carbon:       #0A0A0A;
+      --color-onix:         #141414;
+      --color-forge:        #1E1E1E;
+      --color-graphite-dk:  #2C2C2C;
+      --color-graphite:     #3D3D3D;
+
+      /* — GRISES — */
+      --color-graphite-md:  #5A5A5A;
+      --color-ash:          #888880;
+      --color-stone:        #B4B2A9;
+      --color-fog:          #D0CCC4;
+      --color-mist:         #E0DCD4;
+
+      /* — CÁLIDOS — */
+      --color-crumb:        #E8E4DC;
+      --color-bread:        #F0EDE6;
+      --color-flour:        #F5F2EC;
+      --color-snow:         #FAFAF7;
+
+      /* — ACENTO — */
+      --color-accent:       #C4622D;
+      --color-accent-light: #E8916A;
+      --color-accent-pale:  #F5DDD0;
+      --color-accent-dark:  #8C3F18;
+      --font-display:       'Playfair Display', Georgia, serif;
+      --font-body:          'Cormorant Garamond', Georgia, serif;
+      --font-ui:            'Raleway', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-ui);
+      background: var(--color-flour);
+      color: var(--color-graphite-dk);
+      line-height: 1.6;
+    }
+
+    /* ===================== NAVIGATION ===================== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--color-carbon);
+      border-bottom: 1px solid var(--color-graphite);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--color-crumb);
+      text-transform: lowercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--color-ash);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--color-crumb); }
+
+    /* ===================== HEADER ===================== */
+    .brand-header {
+      background: var(--color-carbon);
+      color: var(--color-crumb);
+      padding: 100px 5% 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-header::before {
+      content: 'uKKo';
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: 260px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.025);
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      letter-spacing: -10px;
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.55em;
+      text-transform: uppercase;
+      color: var(--color-ash);
+      margin-bottom: 32px;
+    }
+
+    .header-title {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 8vw, 96px);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      color: var(--color-flour);
+      text-transform: lowercase;
+      margin-bottom: 8px;
+    }
+
+    .header-title strong {
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+
+    .header-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--color-graphite);
+      margin: 32px 0;
+    }
+
+    .header-subtitle {
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--color-ash);
+    }
+
+    .header-meta {
+      display: flex;
+      gap: 48px;
+      margin-top: 64px;
+    }
+
+    .header-meta-item {}
+
+    .header-meta-label {
+      font-size: 9px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--color-graphite-md);
+      margin-bottom: 6px;
+    }
+
+    .header-meta-value {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-style: italic;
+      color: var(--color-stone);
+    }
+
+    /* ===================== CONTAINER ===================== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 5%;
+    }
+
+    /* ===================== SECTION HEADERS ===================== */
+    .section-number {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.55em;
+      text-transform: uppercase;
+      color: var(--color-stone);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 44px;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      color: var(--color-carbon);
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+
+    .section-desc {
+      font-family: var(--font-body);
+      font-size: 17px;
+      font-style: italic;
+      color: var(--color-ash);
+      margin-bottom: 56px;
+      max-width: 560px;
+    }
+
+    .section-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--color-mist);
+      margin: 80px 0;
+    }
+
+    /* ===================== LOGO SECTION ===================== */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      border: 1px solid var(--color-mist);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .logo-cell {
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      min-height: 280px;
+    }
+
+    .logo-cell.on-flour   { background: var(--color-flour); }
+    .logo-cell.on-crumb   { background: var(--color-crumb); }
+    .logo-cell.on-carbon  { background: var(--color-carbon); }
+    .logo-cell.on-forge   { background: var(--color-forge); }
+    .logo-cell.on-graphite{ background: var(--color-graphite); }
+    .logo-cell.on-stone   { background: var(--color-stone); }
+
+    .logo-cell-label {
+      font-size: 8.5px;
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+    }
+
+    .label-dark  { color: var(--color-ash); }
+    .label-light { color: rgba(255,255,255,0.35); }
+    .label-mid   { color: rgba(0,0,0,0.3); }
+
+    /* Zona de exclusión */
+    .exclusion-box {
+      margin-top: 56px;
+      padding: 40px;
+      background: white;
+      border: 1px solid var(--color-mist);
+      border-radius: 2px;
+      display: flex;
+      align-items: flex-start;
+      gap: 48px;
+    }
+
+    .exclusion-demo {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: var(--color-flour);
+    }
+
+    .exclusion-demo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px dashed var(--color-stone);
+      pointer-events: none;
+    }
+
+    .exclusion-zone {
+      position: absolute;
+      inset: 4px;
+      border: 1px dashed #ccc;
+    }
+
+    .exclusion-text h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-graphite-dk);
+      margin-bottom: 8px;
+    }
+
+    .exclusion-text p {
+      font-size: 13px;
+      color: var(--color-ash);
+      line-height: 1.7;
+      max-width: 400px;
+    }
+
+    /* Usos incorrectos */
+    .incorrect-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .incorrect-item {
+      border: 1px solid var(--color-mist);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .incorrect-badge {
+      background: #C0392B;
+      color: white;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+    }
+
+    .incorrect-demo {
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 80px;
+      background: var(--color-flour);
+    }
+
+    .incorrect-caption {
+      padding: 12px;
+      font-size: 10px;
+      color: var(--color-ash);
+      letter-spacing: 0.05em;
+      border-top: 1px solid var(--color-mist);
+    }
+
+    /* ===================== COLOR PALETTE ===================== */
+    .palette-section-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--color-graphite-md);
+      margin: 48px 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--color-mist);
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .color-card {
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--color-mist);
+      background: white;
+    }
+
+    .color-swatch {
+      height: 120px;
+      width: 100%;
+    }
+
+    .color-info {
+      padding: 16px;
+    }
+
+    .color-name {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--color-graphite-dk);
+      margin-bottom: 8px;
+    }
+
+    .color-values {
+      font-family: 'Courier New', monospace;
+      font-size: 10.5px;
+      color: var(--color-ash);
+      line-height: 2;
+    }
+
+    /* Gradient strip */
+    .gradient-strip {
+      height: 60px;
+      width: 100%;
+      border-radius: 2px;
+      display: flex;
+      overflow: hidden;
+      border: 1px solid var(--color-mist);
+      margin-top: 32px;
+    }
+
+    .gradient-stop {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 6px;
+    }
+
+    .gradient-stop span {
+      font-size: 7.5px;
+      font-family: 'Courier New', monospace;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===================== TYPOGRAPHY ===================== */
+    .type-specimen {
+      background: white;
+      border: 1px solid var(--color-mist);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .type-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 32px;
+      background: var(--color-flour);
+      border-bottom: 1px solid var(--color-mist);
+    }
+
+    .type-font-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-graphite-dk);
+    }
+
+    .type-font-use {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-stone);
+    }
+
+    .type-body {
+      padding: 40px 32px;
+    }
+
+    .type-sample-row {
+      display: flex;
+      align-items: baseline;
+      gap: 32px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--color-flour);
+    }
+
+    .type-sample-row:last-child { border-bottom: none; }
+
+    .type-meta {
+      min-width: 100px;
+      flex-shrink: 0;
+    }
+
+    .type-size-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--color-stone);
+    }
+
+    .type-size-value {
+      font-size: 9px;
+      color: var(--color-fog);
+      margin-top: 4px;
+    }
+
+    .type-scale-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .type-scale-card {
+      padding: 28px;
+      background: var(--color-flour);
+      border: 1px solid var(--color-mist);
+      border-radius: 2px;
+    }
+
+    .type-scale-label {
+      font-size: 8.5px;
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--color-stone);
+      margin-bottom: 10px;
+    }
+
+    /* ===================== COMPONENTS ===================== */
+    .components-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .component-card {
+      background: white;
+      border: 1px solid var(--color-mist);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .component-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--color-ash);
+      padding: 14px 24px;
+      background: var(--color-flour);
+      border-bottom: 1px solid var(--color-mist);
+    }
+
+    .component-demo {
+      padding: 40px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      font-family: var(--font-ui);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--color-carbon);
+      color: var(--color-crumb);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-graphite-dk);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-carbon);
+      border: 1px solid var(--color-graphite-dk);
+    }
+
+    .btn-outline:hover {
+      background: var(--color-carbon);
+      color: var(--color-crumb);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--color-ash);
+      border: 1px solid var(--color-mist);
+    }
+
+    .btn-ghost:hover {
+      color: var(--color-carbon);
+      border-color: var(--color-stone);
+    }
+
+    .btn-crumb {
+      background: var(--color-crumb);
+      color: var(--color-graphite-dk);
+    }
+
+    .btn-crumb:hover {
+      background: var(--color-stone);
+    }
+
+    .btn-accent {
+      background: #C4622D;
+      color: #F5DDD0;
+    }
+
+    .btn-accent:hover {
+      background: #8C3F18;
+    }
+
+    /* Tags */
+    .tag {
+      display: inline-block;
+      padding: 4px 14px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+    }
+
+    .tag-dark { background: var(--color-carbon); color: var(--color-crumb); }
+    .tag-mid  { background: var(--color-graphite); color: var(--color-crumb); }
+    .tag-ash  { background: var(--color-ash); color: white; }
+    .tag-stone{ background: var(--color-stone); color: var(--color-graphite-dk); }
+    .tag-light{ background: var(--color-mist); color: var(--color-graphite-md); border: 1px solid var(--color-fog); }
+
+    /* Input */
+    .input-demo {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 12px 16px;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      background: var(--color-flour);
+      border: 1px solid var(--color-fog);
+      color: var(--color-graphite-dk);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .input-field:focus { border-color: var(--color-graphite-dk); }
+    .input-field::placeholder { color: var(--color-stone); }
+
+    .input-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--color-ash);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* Badge / notification */
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ===================== SPACING ===================== */
+    .spacing-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .spacing-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 16px 24px;
+      background: white;
+      border: 1px solid var(--color-mist);
+      border-radius: 2px;
+    }
+
+    .spacing-token {
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      color: var(--color-graphite-dk);
+      min-width: 80px;
+    }
+
+    .spacing-px {
+      font-size: 11px;
+      color: var(--color-stone);
+      min-width: 60px;
+    }
+
+    .spacing-bar {
+      height: 32px;
+      background: var(--color-graphite-dk);
+      border-radius: 1px;
+    }
+
+    /* ===================== GRID ===================== */
+    .grid-demo {
+      border: 1px solid var(--color-mist);
+      border-radius: 2px;
+      padding: 32px;
+      background: white;
+      overflow: hidden;
+    }
+
+    .grid-inner {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 8px;
+    }
+
+    .grid-col {
+      height: 40px;
+      background: rgba(0,0,0,0.04);
+      border: 1px solid var(--color-mist);
+      border-radius: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      color: var(--color-stone);
+      font-weight: 500;
+    }
+
+    .grid-example-row {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .ge-block {
+      background: var(--color-graphite-dk);
+      height: 48px;
+      border-radius: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      color: var(--color-stone);
+      font-weight: 500;
+      letter-spacing: 0.15em;
+    }
+
+    .ge-block.light {
+      background: var(--color-mist);
+      color: var(--color-graphite-md);
+    }
+
+    /* ===================== APPLICATIONS ===================== */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .app-card {
+      background: white;
+      border: 1px solid var(--color-mist);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .app-card-header {
+      padding: 20px 28px;
+      background: var(--color-flour);
+      border-bottom: 1px solid var(--color-mist);
+    }
+
+    .app-card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-graphite-dk);
+      margin-bottom: 4px;
+    }
+
+    .app-card-desc {
+      font-size: 11px;
+      color: var(--color-ash);
+      letter-spacing: 0.05em;
+    }
+
+    .app-card-demo {
+      padding: 32px 28px;
+    }
+
+    /* Business Card */
+    .business-card {
+      background: var(--color-carbon);
+      color: var(--color-crumb);
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 170px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bc-name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: lowercase;
+    }
+
+    .bc-role {
+      font-size: 9px;
+      font-weight: 300;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--color-ash);
+      margin-top: 4px;
+    }
+
+    .bc-contact {
+      font-size: 10px;
+      color: var(--color-stone);
+      line-height: 1.9;
+      letter-spacing: 0.05em;
+    }
+
+    .bc-logo-bg {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.06;
+      font-family: var(--font-display);
+      font-size: 80px;
+      font-weight: 900;
+      text-transform: lowercase;
+      letter-spacing: -2px;
+      pointer-events: none;
+    }
+
+    /* Packaging label */
+    .pack-label {
+      border: 2px solid var(--color-carbon);
+      padding: 20px 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .pack-label::before, .pack-label::after {
+      content: '';
+      position: absolute;
+      top: 4px; left: 4px; right: 4px; bottom: 4px;
+      border: 0.5px solid var(--color-graphite-md);
+    }
+
+    .pack-name {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--color-carbon);
+      text-transform: lowercase;
+      line-height: 1;
+    }
+
+    .pack-name strong { font-weight: 900; }
+
+    .pack-sub {
+      font-size: 8.5px;
+      font-weight: 500;
+      letter-spacing: 0.55em;
+      text-transform: uppercase;
+      color: var(--color-ash);
+      margin-top: 8px;
+    }
+
+    .pack-divider {
+      width: 40px;
+      height: 0.5px;
+      background: var(--color-fog);
+      margin: 12px auto;
+    }
+
+    .pack-detail {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 11px;
+      color: var(--color-stone);
+    }
+
+    /* Instagram post */
+    .ig-post {
+      aspect-ratio: 1;
+      background: var(--color-carbon);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      max-width: 280px;
+    }
+
+    .ig-bg-text {
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: 120px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      letter-spacing: -4px;
+      pointer-events: none;
+    }
+
+    .ig-quote {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--color-crumb);
+      line-height: 1.5;
+      z-index: 1;
+    }
+
+    .ig-brand {
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--color-ash);
+      margin-top: 20px;
+      z-index: 1;
+    }
+
+    /* Stamp / Sello */
+    .stamp {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 28px;
+      border: 2px solid var(--color-carbon);
+      text-align: center;
+      gap: 4px;
+    }
+
+    .stamp-top {
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--color-graphite-md);
+    }
+
+    .stamp-main {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      color: var(--color-carbon);
+      text-transform: lowercase;
+    }
+
+    .stamp-line {
+      width: 100%;
+      height: 0.5px;
+      background: var(--color-fog);
+    }
+
+    .stamp-bottom {
+      font-size: 7.5px;
+      font-weight: 500;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--color-stone);
+    }
+
+    /* ===================== MANIFESTO ===================== */
+    .manifesto-section {
+      background: var(--color-carbon);
+      color: var(--color-crumb);
+      padding: 100px 5%;
+    }
+
+    .manifesto-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .manifesto-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.55em;
+      text-transform: uppercase;
+      color: var(--color-graphite-md);
+      margin-bottom: 48px;
+    }
+
+    .manifesto-text {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3.5vw, 38px);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--color-flour);
+    }
+
+    .manifesto-text em {
+      font-style: normal;
+      color: var(--color-ash);
+    }
+
+    .manifesto-divider {
+      width: 1px;
+      height: 64px;
+      background: var(--color-graphite);
+      margin: 56px 0;
+    }
+
+    .manifesto-values {
+      display: flex;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+
+    .manifesto-value-item {
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .mv-number {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--color-graphite);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .mv-title {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--color-ash);
+      margin-bottom: 8px;
+    }
+
+    .mv-desc {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-style: italic;
+      color: var(--color-graphite-md);
+      line-height: 1.6;
+    }
+
+    /* ===================== ICON / PATTERNS ===================== */
+    .patterns-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .pattern-cell {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--color-mist);
+      border-radius: 2px;
+      background: white;
+    }
+
+    /* ===================== FOOTER / DOWNLOAD ===================== */
+    .footer-section {
+      background: var(--color-onix);
+      padding: 80px 5%;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--color-crumb);
+      text-transform: lowercase;
+      margin-bottom: 4px;
+    }
+
+    .footer-logo strong { font-weight: 900; }
+
+    .footer-tagline {
+      font-size: 9px;
+      font-weight: 300;
+      letter-spacing: 0.55em;
+      text-transform: uppercase;
+      color: var(--color-ash);
+      margin-bottom: 48px;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 48px;
+      background: transparent;
+      border: 1px solid var(--color-graphite);
+      color: var(--color-crumb);
+      font-family: var(--font-ui);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: var(--color-crumb);
+      color: var(--color-carbon);
+      border-color: var(--color-crumb);
+    }
+
+    .footer-meta {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--color-graphite);
+    }
+
+    .footer-meta-item {
+      text-align: center;
+    }
+
+    .fm-label {
+      font-size: 8px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--color-graphite-md);
+      margin-bottom: 6px;
+    }
+
+    .fm-value {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-style: italic;
+      color: var(--color-stone);
+    }
+
+    /* ===================== UTILITIES ===================== */
+    @media (max-width: 768px) {
+      .logo-grid { grid-template-columns: 1fr; }
+      .type-scale-grid { grid-template-columns: 1fr; }
+      .components-grid { grid-template-columns: 1fr; }
+      .apps-grid { grid-template-columns: 1fr; }
+      .incorrect-grid { grid-template-columns: repeat(2, 1fr); }
+      .patterns-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+      .header-meta { flex-direction: column; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="nav-logo">uKKo panes</div>
+  <ul class="nav-links">
+    <li><a href="#logo">Logo</a></li>
+    <li><a href="#color">Color</a></li>
+    <li><a href="#tipo">Tipografía</a></li>
+    <li><a href="#componentes">Componentes</a></li>
+    <li><a href="#aplicaciones">Aplicaciones</a></li>
+    <li><a href="#manifiesto">Manifiesto</a></li>
+  </ul>
+  <div style="width: 8px; height: 8px; border-radius: 50%; background: #C4622D; flex-shrink: 0;"></div>
+</nav>
+
+<!-- HEADER -->
+<header class="brand-header">
+  <div class="header-inner">
+    <p class="header-label">Guía de Identidad de Marca &nbsp;·&nbsp; 2026</p>
+
+    <div style="display:flex; align-items:flex-start; gap: 24px; flex-wrap: wrap;">
+      <!-- Logo SVG inline -->
+      <div style="flex-shrink:0; margin-top: 6px;"><img src="ukko_logo_harina.svg" width="110" height="110" style="display:block;"></div>
+
+      <div>
+        <h1 class="header-title" style="line-height: 0.9;">ukko</h1>
+        <div style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 4vw, 48px); font-weight: 400; letter-spacing: 0.18em; color: var(--color-ash); text-transform: lowercase; margin-top: 6px;">panes</div>
+        <div class="header-divider"></div>
+        <p class="header-subtitle">Pan artesanal &nbsp;·&nbsp; Masa madre &nbsp;·&nbsp; Posadas, Argentina</p>
+      </div>
+    </div>
+
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <div class="header-meta-label">Versión</div>
+        <div class="header-meta-value">Brand Book 1.0</div>
+      </div>
+      <div class="header-meta-item">
+        <div class="header-meta-label">Año</div>
+        <div class="header-meta-value">2026</div>
+      </div>
+      <div class="header-meta-item">
+        <div class="header-meta-label">Instagram</div>
+        <div class="header-meta-value">@ukkopanes</div>
+      </div>
+      <div class="header-meta-item">
+        <div class="header-meta-label">Concepto</div>
+        <div class="header-meta-value">Trueno · Tiempo · Tradición</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- ===== 1. LOGO ===== -->
+  <section id="logo">
+    <p class="section-number">01 &mdash; Identidad visual</p>
+    <h2 class="section-title">Logo & Símbolo</h2>
+    <p class="section-desc">El círculo evoca el ciclo del pan. El rayo es Ukko, dios nórdico del trueno —fuerza, origen, constancia. La tipografía mixta uKKo distingue el sello artesanal.</p>
+
+    <!-- Logo en fondos -->
+    <div class="logo-grid">
+
+      <!-- Sobre flour -->
+      <div class="logo-cell on-flour">
+        <img src="ukko_logo_carbon.svg" width="100" height="100" style="display:block">
+        <span class="logo-cell-label label-dark">Sobre Pan blanco</span>
+        <div style="display:flex; flex-direction:column; gap:6px; width:100%; margin-top:4px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:14px; height:14px; border-radius:50%; background:#0A0A0A; flex-shrink:0; border:1px solid #D0CCC4;"></div>
+            <span style="font-size:9px; font-weight:600; letter-spacing:0.3em; text-transform:uppercase; color:#5A5A5A;">Logo → <span style="font-family:'Courier New',monospace;">#0A0A0A</span> Carbón</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:14px; height:14px; border-radius:50%; background:#F5F2EC; flex-shrink:0; border:1px solid #D0CCC4;"></div>
+            <span style="font-size:9px; font-weight:600; letter-spacing:0.3em; text-transform:uppercase; color:#5A5A5A;">Fondo → <span style="font-family:'Courier New',monospace;">#F5F2EC</span> Harina</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sobre crumb -->
+      <div class="logo-cell on-crumb">
+        <img src="ukko_logo_carbon.svg" width="100" height="100" style="display:block">
+        <span class="logo-cell-label label-mid">Sobre Miga</span>
+        <div style="display:flex; flex-direction:column; gap:6px; width:100%; margin-top:4px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:14px; height:14px; border-radius:50%; background:#0A0A0A; flex-shrink:0; border:1px solid #D0CCC4;"></div>
+            <span style="font-size:9px; font-weight:600; letter-spacing:0.3em; text-transform:uppercase; color:#5A5A5A;">Logo → <span style="font-family:'Courier New',monospace;">#0A0A0A</span> Carbón</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:14px; height:14px; border-radius:50%; background:#E8E4DC; flex-shrink:0; border:1px solid #D0CCC4;"></div>
+            <span style="font-size:9px; font-weight:600; letter-spacing:0.3em; text-transform:uppercase; color:#5A5A5A;">Fondo → <span style="font-family:'Courier New',monospace;">#E8E4DC</span> Miga</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sobre carbon -->
+      <div class="logo-cell on-carbon">
+        <img src="ukko_logo_harina.svg" width="100" height="100" style="display:block;">
+        <span class="logo-cell-label label-light">Sobre Carbón</span>
+        <div style="display:flex; flex-direction:column; gap:6px; width:100%; margin-top:4px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:14px; height:14px; border-radius:50%; background:#F5F2EC; flex-shrink:0; border:1px solid #3D3D3D;"></div>
+            <span style="font-size:9px; font-weight:600; letter-spacing:0.3em; text-transform:uppercase; color:#5A5A5A;">Logo → <span style="font-family:'Courier New',monospace;">#F5F2EC</span> Harina</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:14px; height:14px; border-radius:50%; background:#0A0A0A; flex-shrink:0; border:1px solid #3D3D3D;"></div>
+            <span style="font-size:9px; font-weight:600; letter-spacing:0.3em; text-transform:uppercase; color:#5A5A5A;">Fondo → <span style="font-family:'Courier New',monospace;">#0A0A0A</span> Carbón</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <div class="section-rule"></div>
+
+  <!-- ===== 2. COLOR ===== -->
+  <section id="color">
+    <p class="section-number">02 &mdash; Sistema cromático</p>
+    <h2 class="section-title">Paleta de colores</h2>
+    <p class="section-desc">Una gama estrictamente neutra que evoca el carbón del horno, la ceniza, la miga y la harina. Sin colores de moda —sólo la honestidad del oficio.</p>
+
+    <!-- Franja de degradado -->
+    <div class="gradient-strip">
+      <div class="gradient-stop" style="background:#0A0A0A;"><span style="color:#3D3D3D;">Carbón</span></div>
+      <div class="gradient-stop" style="background:#141414;"><span style="color:#3D3D3D;">Ónix</span></div>
+      <div class="gradient-stop" style="background:#1E1E1E;"><span style="color:#3D3D3D;">Forja</span></div>
+      <div class="gradient-stop" style="background:#2C2C2C;"><span style="color:#5A5A5A;">Grafito O.</span></div>
+      <div class="gradient-stop" style="background:#3D3D3D;"><span style="color:#5A5A5A;">Grafito</span></div>
+      <div class="gradient-stop" style="background:#5A5A5A;"><span style="color:#B4B2A9;">Grafito M.</span></div>
+      <div class="gradient-stop" style="background:#888880;"><span style="color:#D0CCC4;">Ceniza</span></div>
+      <div class="gradient-stop" style="background:#B4B2A9;"><span style="color:#5A5A5A;">Piedra</span></div>
+      <div class="gradient-stop" style="background:#D0CCC4;"><span style="color:#5A5A5A;">Niebla</span></div>
+      <div class="gradient-stop" style="background:#E0DCD4;"><span style="color:#5A5A5A;">Neblina</span></div>
+      <div class="gradient-stop" style="background:#E8E4DC;"><span style="color:#5A5A5A;">Miga</span></div>
+      <div class="gradient-stop" style="background:#F0EDE6;"><span style="color:#888880;">Pan blanco</span></div>
+      <div class="gradient-stop" style="background:#F5F2EC;"><span style="color:#888880;">Harina</span></div>
+      <div class="gradient-stop" style="background:#FAFAF7; border-right: 1px solid #E0DCD4;"><span style="color:#888880;">Nieve</span></div>
+      <div class="gradient-stop" style="background:#E8916A;"><span style="color:#8C3F18;">Brasa cl.</span></div>
+      <div class="gradient-stop" style="background:#C4622D;"><span style="color:#F5DDD0;">Brasa</span></div>
+      <div class="gradient-stop" style="background:#8C3F18;"><span style="color:#F5DDD0;">Brasa os.</span></div>
+    </div>
+
+    <!-- Carbones -->
+    <p class="palette-section-title">Colores oscuros — Carbones</p>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#0A0A0A;"></div>
+        <div class="color-info">
+          <div class="color-name">Carbón</div>
+          <div class="color-values">
+            HEX: #0A0A0A<br>
+            RGB: 10, 10, 10<br>
+            CMYK: 0, 0, 0, 96
+          </div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#141414;"></div>
+        <div class="color-info">
+          <div class="color-name">Ónix</div>
+          <div class="color-values">
+            HEX: #141414<br>
+            RGB: 20, 20, 20<br>
+            CMYK: 0, 0, 0, 92
+          </div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#1E1E1E;"></div>
+        <div class="color-info">
+          <div class="color-name">Forja</div>
+          <div class="color-values">
+            HEX: #1E1E1E<br>
+            RGB: 30, 30, 30<br>
+            CMYK: 0, 0, 0, 88
+          </div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#2C2C2C;"></div>
+        <div class="color-info">
+          <div class="color-name">Grafito oscuro</div>
+          <div class="color-values">
+            HEX: #2C2C2C<br>
+            RGB: 44, 44, 44<br>
+            CMYK: 0, 0, 0, 83
+          </div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#3D3D3D;"></div>
+        <div class="color-info">
+          <div class="color-name">Grafito</div>
+          <div class="color-values">
+            HEX: #3D3D3D<br>
+            RGB: 61, 61, 61<br>
+            CMYK: 0, 0, 0, 76
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grises medios -->
+    <p class="palette-section-title">Grises medios — Cenizas</p>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#5A5A5A;"></div>
+        <div class="color-info">
+          <div class="color-name">Grafito medio</div>
+          <div class="color-values">
+            HEX: #5A5A5A<br>
+            RGB: 90, 90, 90<br>
+            CMYK: 0, 0, 0, 65
+          </div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#888880;"></div>
+        <div class="color-info">
+          <div class="color-name">Ceniza</div>
+          <div class="color-values">
+            HEX: #888880<br>
+            RGB: 136, 136, 128<br>
+            CMYK: 0, 0, 6, 47
+          </div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#B4B2A9;"></div>
+        <div class="color-info">
+          <div class="color-name">Piedra</div>
+          <div class="color-values">
+            HEX: #B4B2A9<br>
+            RGB: 180, 178, 169<br>
+            CMYK: 0, 1, 6, 29
+          </div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#D0CCC4;"></div>
+        <div class="color-info">
+          <div class="color-name">Niebla</div>
+          <div class="color-values">
+            HEX: #D0CCC4<br>
+            RGB: 208, 204, 196<br>
+            CMYK: 0, 2, 6, 18
+          </div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#E0DCD4;"></div>
+        <div class="color-info">
+          <div class="color-name">Neblina</div>
+          <div class="color-values">
+            HEX: #E0DCD4<br>
+            RGB: 224, 220, 212<br>
+            CMYK: 0, 2, 5, 12
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cálidos -->
+    <p class="palette-section-title">Cálidos — La miga y la harina</p>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#E8E4DC;"></div>
+        <div class="color-info">
+          <div class="color-name">Miga</div>
+          <div class="color-values">
+            HEX: #E8E4DC<br>
+            RGB: 232, 228, 220<br>
+            CMYK: 0, 2, 5, 9
+          </div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#F0EDE6;"></div>
+        <div class="color-info">
+          <div class="color-name">Pan blanco</div>
+          <div class="color-values">
+            HEX: #F0EDE6<br>
+            RGB: 240, 237, 230<br>
+            CMYK: 0, 1, 4, 6
+          </div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#F5F2EC; border-bottom: 1px solid #E0DCD4;"></div>
+        <div class="color-info">
+          <div class="color-name">Harina</div>
+          <div class="color-values">
+            HEX: #F5F2EC<br>
+            RGB: 245, 242, 236<br>
+            CMYK: 0, 1, 4, 4
+          </div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FAFAF7; border-bottom: 1px solid #E0DCD4;"></div>
+        <div class="color-info">
+          <div class="color-name">Nieve</div>
+          <div class="color-values">
+            HEX: #FAFAF7<br>
+            RGB: 250, 250, 247<br>
+            CMYK: 0, 0, 1, 2
+          </div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FFFFFF; border-bottom: 1px solid #E0DCD4;"></div>
+        <div class="color-info">
+          <div class="color-name">Blanco</div>
+          <div class="color-values">
+            HEX: #FFFFFF<br>
+            RGB: 255, 255, 255<br>
+            CMYK: 0, 0, 0, 0
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Acento -->
+    <p class="palette-section-title">Color de contraste — Brasa</p>
+    <div style="background: #FDF6F2; border: 1px solid #F0D5C5; border-radius: 2px; padding: 16px 20px; margin-bottom: 20px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 15px; font-style: italic; color: #8C3F18;">
+      Un único color de acento: la brasa del horno. Se usa con criterio —nunca como decoración, siempre como señal.
+    </div>
+    <div class="color-grid" style="grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#C4622D;"></div>
+        <div class="color-info">
+          <div class="color-name">Brasa</div>
+          <div class="color-values">HEX: #C4622D<br>RGB: 196, 98, 45<br>CMYK: 0, 50, 77, 23</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#E8916A;"></div>
+        <div class="color-info">
+          <div class="color-name">Brasa clara</div>
+          <div class="color-values">HEX: #E8916A<br>RGB: 232, 145, 106<br>CMYK: 0, 37, 54, 9</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#F5DDD0;"></div>
+        <div class="color-info">
+          <div class="color-name">Brasa pálida</div>
+          <div class="color-values">HEX: #F5DDD0<br>RGB: 245, 221, 208<br>CMYK: 0, 10, 15, 4</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#8C3F18;"></div>
+        <div class="color-info">
+          <div class="color-name">Brasa oscura</div>
+          <div class="color-values">HEX: #8C3F18<br>RGB: 140, 63, 24<br>CMYK: 0, 55, 83, 45</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Usos del acento -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 20px; margin-bottom: 40px;">
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <div style="background:#C4622D; color:#F5DDD0; padding: 16px 20px; font-family: 'Raleway', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase;">Botón de acción</div>
+        <div style="background:#F5DDD0; font-size: 9px; padding: 6px 10px; color: #8C3F18; letter-spacing: 0.2em;">Brasa sobre pálida</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <div style="background:#0A0A0A; color:#E8916A; padding: 16px 20px; font-family: 'Raleway', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase;">Destacado sobre oscuro</div>
+        <div style="background:#F5DDD0; font-size: 9px; padding: 6px 10px; color: #8C3F18; letter-spacing: 0.2em;">Brasa clara sobre Carbón</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <div style="background:#F5F2EC; padding: 16px 20px; display: flex; align-items: center; gap: 10px; border-left: 3px solid #C4622D;">
+          <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 14px; color: #0A0A0A;">Disponible hoy</span>
+        </div>
+        <div style="background:#F5DDD0; font-size: 9px; padding: 6px 10px; color: #8C3F18; letter-spacing: 0.2em;">Borde lateral de acento</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <div style="background:#F5F2EC; padding: 16px 20px;">
+          <span style="font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #C4622D; background: #F5DDD0; padding: 3px 10px;">Nuevo</span>
+          <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 14px; color: #0A0A0A; margin-left: 8px;">Baguette de espelta</span>
+        </div>
+        <div style="background:#F5DDD0; font-size: 9px; padding: 6px 10px; color: #8C3F18; letter-spacing: 0.2em;">Badge de novedad</div>
+      </div>
+    </div>
+
+    <!-- Combinaciones -->
+    <p class="palette-section-title">Combinaciones aprobadas</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <div style="background:#0A0A0A; color:#E8E4DC; padding: 20px 24px; font-family: Georgia, serif; font-size: 18px; font-weight: 700; letter-spacing: 0.1em;">uKKo panes</div>
+        <div style="background:#E8E4DC; font-size: 9px; padding: 6px 10px; color: #888880; letter-spacing: 0.2em;">Carbón sobre Miga — Principal</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <div style="background:#F5F2EC; color:#0A0A0A; padding: 20px 24px; font-family: Georgia, serif; font-size: 18px; font-weight: 700; letter-spacing: 0.1em; border: 1px solid #E0DCD4;">uKKo panes</div>
+        <div style="background:#E8E4DC; font-size: 9px; padding: 6px 10px; color: #888880; letter-spacing: 0.2em;">Carbón sobre Harina</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <div style="background:#2C2C2C; color:#F5F2EC; padding: 20px 24px; font-family: Georgia, serif; font-size: 18px; font-weight: 700; letter-spacing: 0.1em;">uKKo panes</div>
+        <div style="background:#E8E4DC; font-size: 9px; padding: 6px 10px; color: #888880; letter-spacing: 0.2em;">Harina sobre Grafito O.</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <div style="background:#3D3D3D; color:#E8E4DC; padding: 20px 24px; font-family: Georgia, serif; font-size: 18px; font-weight: 700; letter-spacing: 0.1em;">uKKo panes</div>
+        <div style="background:#E8E4DC; font-size: 9px; padding: 6px 10px; color: #888880; letter-spacing: 0.2em;">Miga sobre Grafito</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-rule"></div>
+
+  <!-- ===== 3. TIPOGRAFÍA ===== -->
+  <section id="tipo">
+    <p class="section-number">03 &mdash; Sistema tipográfico</p>
+    <h2 class="section-title">Tipografía</h2>
+    <p class="section-desc">Tres fuentes que conviven: una serif clásica para impacto, una romana refinada para textos largos, y una sans geométrica para UI y etiquetas.</p>
+
+    <!-- Playfair Display -->
+    <div class="type-specimen">
+      <div class="type-header">
+        <span class="type-font-name">Playfair Display</span>
+        <span class="type-font-use">Display · Títulos · Sello de marca</span>
+      </div>
+      <div class="type-body">
+        <div class="type-sample-row">
+          <div class="type-meta">
+            <div class="type-size-label">Display XL</div>
+            <div class="type-size-value">72px / 900</div>
+          </div>
+          <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 64px; font-weight: 900; letter-spacing: -1px; line-height: 1; color: var(--color-carbon);">ukko</div>
+        </div>
+        <div class="type-sample-row">
+          <div class="type-meta">
+            <div class="type-size-label">Display L</div>
+            <div class="type-size-value">48px / 700 italic</div>
+          </div>
+          <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; font-weight: 700; font-style: italic; letter-spacing: 0.02em; line-height: 1.1; color: var(--color-graphite-dk);">"Del horno al mundo"</div>
+        </div>
+        <div class="type-sample-row">
+          <div class="type-meta">
+            <div class="type-size-label">Heading 1</div>
+            <div class="type-size-value">32px / 400</div>
+          </div>
+          <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 30px; font-weight: 400; letter-spacing: 0.04em; line-height: 1.2; color: var(--color-carbon);">Pan de masa madre con centeno</div>
+        </div>
+        <div class="type-sample-row">
+          <div class="type-meta">
+            <div class="type-size-label">Heading 2</div>
+            <div class="type-size-value">22px / 500</div>
+          </div>
+          <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 500; letter-spacing: 0.06em; color: var(--color-graphite-dk);">Hecho a mano, horneado esta mañana</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cormorant Garamond -->
+    <div class="type-specimen">
+      <div class="type-header">
+        <span class="type-font-name">Cormorant Garamond</span>
+        <span class="type-font-use">Cuerpo de texto · Descripciones · Manifesto</span>
+      </div>
+      <div class="type-body">
+        <div class="type-sample-row">
+          <div class="type-meta">
+            <div class="type-size-label">Body L</div>
+            <div class="type-size-value">20px / 400 italic</div>
+          </div>
+          <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px; font-style: italic; font-weight: 400; line-height: 1.7; color: var(--color-graphite-dk); max-width: 560px;">Con ingredientes seleccionados y tiempos que no se apresuran, cada pieza lleva el sello de quien la amasó.</div>
+        </div>
+        <div class="type-sample-row">
+          <div class="type-meta">
+            <div class="type-size-label">Body M</div>
+            <div class="type-size-value">17px / 400</div>
+          </div>
+          <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 17px; font-weight: 400; line-height: 1.75; color: var(--color-graphite-md); max-width: 560px;">Harina de trigo, agua, sal y un cultivo de masa madre que llevamos más de tres años criando. Cada pan se forma a mano, se deja fermentar a su propio ritmo y se hornea en el momento justo.</div>
+        </div>
+        <div class="type-sample-row">
+          <div class="type-meta">
+            <div class="type-size-label">Caption</div>
+            <div class="type-size-value">14px / 300 italic</div>
+          </div>
+          <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; font-weight: 300; font-style: italic; color: var(--color-stone);">Horneado en horno de piedra · Posadas, Misiones · 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Raleway -->
+    <div class="type-specimen">
+      <div class="type-header">
+        <span class="type-font-name">Raleway</span>
+        <span class="type-font-use">Etiquetas · UI · Navegación · Precios</span>
+      </div>
+      <div class="type-body">
+        <div class="type-sample-row">
+          <div class="type-meta">
+            <div class="type-size-label">UI Label</div>
+            <div class="type-size-value">10px / 600 SC</div>
+          </div>
+          <div style="font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--color-ash);">Pan de centeno · Focaccia · Baguette</div>
+        </div>
+        <div class="type-sample-row">
+          <div class="type-meta">
+            <div class="type-size-label">Price</div>
+            <div class="type-size-value">28px / 300</div>
+          </div>
+          <div style="font-family: 'Raleway', sans-serif; font-size: 28px; font-weight: 300; letter-spacing: 0.05em; color: var(--color-graphite-dk);">$1.200</div>
+        </div>
+        <div class="type-sample-row">
+          <div class="type-meta">
+            <div class="type-size-label">Button</div>
+            <div class="type-size-value">10px / 600 SC</div>
+          </div>
+          <div style="display:flex; gap: 12px; flex-wrap: wrap;">
+            <button class="btn btn-primary">Encargar ahora</button>
+            <button class="btn btn-outline">Ver carta</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Escala tipográfica -->
+    <p style="font-size: 10px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--color-ash); margin-bottom: 16px; margin-top: 40px;">Escala tipográfica completa</p>
+    <div class="type-scale-grid">
+      <div class="type-scale-card">
+        <div class="type-scale-label">Display — 72px</div>
+        <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 48px; font-weight: 900; line-height: 1; color: var(--color-carbon);">ukko</div>
+      </div>
+      <div class="type-scale-card">
+        <div class="type-scale-label">H1 — 36px</div>
+        <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 34px; font-weight: 400; line-height: 1.1; color: var(--color-carbon);">Masa madre</div>
+      </div>
+      <div class="type-scale-card">
+        <div class="type-scale-label">H2 — 24px</div>
+        <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 500; color: var(--color-graphite-dk);">Pan de centeno</div>
+      </div>
+      <div class="type-scale-card">
+        <div class="type-scale-label">Body — 17px</div>
+        <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 17px; line-height: 1.7; color: var(--color-graphite-md);">Producción artesanal, hecho con las manos.</div>
+      </div>
+      <div class="type-scale-card">
+        <div class="type-scale-label">Label — 10px</div>
+        <div style="font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--color-ash);">Pan artesanal · Posadas</div>
+      </div>
+      <div class="type-scale-card">
+        <div class="type-scale-label">Caption — 13px italic</div>
+        <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 13px; font-style: italic; color: var(--color-stone);">Horneado esta mañana · Sin conservantes</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-rule"></div>
+
+  <!-- ===== 4. COMPONENTES ===== -->
+  <section id="componentes">
+    <p class="section-number">04 &mdash; Librería de componentes</p>
+    <h2 class="section-title">Componentes UI</h2>
+    <p class="section-desc">Elementos reutilizables para redes sociales, web, etiquetas y comunicaciones digitales. Siempre en escala neutra.</p>
+
+    <div class="components-grid">
+
+      <!-- Botones -->
+      <div class="component-card">
+        <div class="component-label">Botones</div>
+        <div class="component-demo" style="flex-direction: column; align-items: flex-start;">
+          <button class="btn btn-primary">Encargar pan</button>
+          <button class="btn btn-outline">Ver carta</button>
+          <button class="btn btn-ghost">Más info</button>
+          <button class="btn btn-crumb">Contacto</button>
+          <button class="btn btn-accent">Encargar — nuevo</button>
+        </div>
+      </div>
+
+      <!-- Tags & Badges -->
+      <div class="component-card">
+        <div class="component-label">Tags & Badges</div>
+        <div class="component-demo" style="flex-direction: column; align-items: flex-start; gap: 20px;">
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="tag tag-dark">Masa madre</span>
+            <span class="tag tag-mid">Centeno</span>
+            <span class="tag tag-ash">Orgánico</span>
+            <span class="tag tag-stone">Sin gluten</span>
+            <span class="tag tag-light">Focaccia</span>
+          </div>
+          <div class="badge-row">
+            <div class="badge" style="background: var(--color-flour); border: 1px solid var(--color-mist); color: var(--color-graphite-dk);">
+              <span class="badge-dot" style="background: #2C2C2C;"></span>
+              <span style="font-size: 11px;">Disponible hoy</span>
+            </div>
+            <div class="badge" style="background: var(--color-flour); border: 1px solid var(--color-mist); color: var(--color-stone);">
+              <span class="badge-dot" style="background: var(--color-stone);"></span>
+              <span style="font-size: 11px;">Agotado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="component-card">
+        <div class="component-label">Formulario de encargo</div>
+        <div class="component-demo">
+          <div class="input-demo">
+            <div>
+              <label class="input-label">Nombre</label>
+              <input class="input-field" type="text" placeholder="Tu nombre">
+            </div>
+            <div>
+              <label class="input-label">Pan</label>
+              <input class="input-field" type="text" placeholder="ej: Baguette x2">
+            </div>
+            <button class="btn btn-primary" style="width: 100%; justify-content: center;">Enviar encargo</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta de producto -->
+      <div class="component-card">
+        <div class="component-label">Tarjeta de producto</div>
+        <div class="component-demo">
+          <div style="border: 1px solid var(--color-mist); width: 100%; border-radius: 2px; overflow: hidden;">
+            <div style="height: 100px; background: var(--color-graphite-dk); display: flex; align-items: center; justify-content: center;">
+<img src="ukko_logo_harina.svg" width="80" height="80" style="display:block; opacity:0.8;">
+            </div>
+            <div style="padding: 16px 20px;">
+              <div style="font-size: 9px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--color-stone); margin-bottom: 6px;">Masa madre</div>
+              <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 500; color: var(--color-carbon); margin-bottom: 6px;">Pan de centeno</div>
+              <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 13px; font-style: italic; color: var(--color-ash); margin-bottom: 14px;">Elaborado a mano · Corteza crujiente</div>
+              <div style="display:flex; align-items: center; justify-content: space-between;">
+                <span style="font-family: 'Raleway', sans-serif; font-size: 20px; font-weight: 300; color: var(--color-graphite-dk);">$1.800</span>
+                <button class="btn btn-primary" style="padding: 8px 18px; font-size: 9px;">Encargar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-rule"></div>
+
+  <!-- ===== 5. ESPACIADO Y GRILLA ===== -->
+  <section id="espaciado">
+    <p class="section-number">05 &mdash; Layout system</p>
+    <h2 class="section-title">Espaciado & Grilla</h2>
+    <p class="section-desc">Sistema basado en múltiplos de 8px. La consistencia del espaciado construye la calma visual que merece una marca de panadería artesanal.</p>
+
+    <div class="spacing-grid">
+      <div class="spacing-row">
+        <span class="spacing-token">--space-xs</span>
+        <span class="spacing-px">4px</span>
+        <div class="spacing-bar" style="width: 4px; background: var(--color-stone);"></div>
+        <span style="font-size:11px;color:var(--color-stone);">Gaps internos mínimos</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--space-sm</span>
+        <span class="spacing-px">8px</span>
+        <div class="spacing-bar" style="width: 8px;"></div>
+        <span style="font-size:11px;color:var(--color-stone);">Unidad base del sistema</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--space-md</span>
+        <span class="spacing-px">16px</span>
+        <div class="spacing-bar" style="width: 16px;"></div>
+        <span style="font-size:11px;color:var(--color-stone);">Espacio entre elementos</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--space-lg</span>
+        <span class="spacing-px">24px</span>
+        <div class="spacing-bar" style="width: 24px;"></div>
+        <span style="font-size:11px;color:var(--color-stone);">Padding de componentes</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--space-xl</span>
+        <span class="spacing-px">40px</span>
+        <div class="spacing-bar" style="width: 40px;"></div>
+        <span style="font-size:11px;color:var(--color-stone);">Secciones dentro de cards</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--space-2xl</span>
+        <span class="spacing-px">64px</span>
+        <div class="spacing-bar" style="width: 64px;"></div>
+        <span style="font-size:11px;color:var(--color-stone);">Separación entre secciones</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-token">--space-3xl</span>
+        <span class="spacing-px">96px</span>
+        <div class="spacing-bar" style="width: 96px;"></div>
+        <span style="font-size:11px;color:var(--color-stone);">Padding de secciones principales</span>
+      </div>
+    </div>
+
+    <!-- Grilla 12 col -->
+    <p style="font-size: 10px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--color-ash); margin-top: 40px; margin-bottom: 16px;">Sistema de grilla — 12 columnas</p>
+    <div class="grid-demo">
+      <div class="grid-inner">
+        <div class="grid-col">1</div>
+        <div class="grid-col">2</div>
+        <div class="grid-col">3</div>
+        <div class="grid-col">4</div>
+        <div class="grid-col">5</div>
+        <div class="grid-col">6</div>
+        <div class="grid-col">7</div>
+        <div class="grid-col">8</div>
+        <div class="grid-col">9</div>
+        <div class="grid-col">10</div>
+        <div class="grid-col">11</div>
+        <div class="grid-col">12</div>
+      </div>
+      <div class="grid-example-row" style="margin-top: 8px;">
+        <div class="ge-block" style="grid-column: span 8;">Contenido principal — 8 col</div>
+        <div class="ge-block light" style="grid-column: span 4;">Sidebar — 4 col</div>
+      </div>
+      <div class="grid-example-row" style="margin-top: 8px;">
+        <div class="ge-block light" style="grid-column: span 4;">4 col</div>
+        <div class="ge-block light" style="grid-column: span 4;">4 col</div>
+        <div class="ge-block light" style="grid-column: span 4;">4 col</div>
+      </div>
+      <div class="grid-example-row" style="margin-top: 8px;">
+        <div class="ge-block light" style="grid-column: span 3;">3</div>
+        <div class="ge-block light" style="grid-column: span 3;">3</div>
+        <div class="ge-block light" style="grid-column: span 3;">3</div>
+        <div class="ge-block light" style="grid-column: span 3;">3</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-rule"></div>
+
+  <!-- ===== 6. APLICACIONES ===== -->
+  <section id="aplicaciones">
+    <p class="section-number">06 &mdash; Aplicaciones de marca</p>
+    <h2 class="section-title">La marca en el mundo</h2>
+    <p class="section-desc">De la bolsa de papel al feed de Instagram. La identidad uKKo funciona en todo contexto gracias a su paleta neutra y tipografía clásica.</p>
+
+    <div class="apps-grid">
+
+      <!-- Tarjeta de presentación -->
+      <div class="app-card">
+        <div class="app-card-header">
+          <div class="app-card-title">Tarjeta de presentación</div>
+          <div class="app-card-desc">85 × 55mm · Impresión en offset · Papel texturado</div>
+        </div>
+        <div class="app-card-demo">
+          <div class="business-card">
+            <div class="bc-logo-bg">uKKo</div>
+            <div>
+              <div class="bc-name">uKKo panes</div>
+              <div class="bc-role">Pan artesanal · Posadas, Misiones</div>
+            </div>
+            <div class="bc-contact">
+              @ukkopanes<br>
+              encargos por WhatsApp<br>
+              Posadas, Argentina
+            </div>
+          </div>
+          <!-- Reverso -->
+          <div style="background: var(--color-crumb); padding: 20px 28px; display: flex; align-items: center; justify-content: center; min-height: 80px; margin-top: 4px;">
+<img src="ukko_logo_carbon.svg" width="100" height="100" style="display:block">
+          </div>
+        </div>
+      </div>
+
+      <!-- Etiqueta de empaque -->
+      <div class="app-card">
+        <div class="app-card-header">
+          <div class="app-card-title">Etiqueta de empaque</div>
+          <div class="app-card-desc">Bolsa kraft · Sticker autoadhesivo · Sello de lacre</div>
+        </div>
+        <div class="app-card-demo" style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+          <!-- Label principal -->
+          <div class="pack-label">
+            <div class="pack-name">u<strong>KK</strong>o</div>
+            <div class="pack-sub">Pan artesanal</div>
+            <div class="pack-divider"></div>
+            <div class="pack-detail">Masa madre · Producción artesanal · Hecho a mano</div>
+            <div style="margin-top: 12px; display: flex; gap: 24px; justify-content: center;">
+              <div style="text-align: center;">
+                <div style="font-family: 'Raleway', sans-serif; font-size: 8px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--color-stone);">Peso</div>
+                <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 13px; color: var(--color-graphite-dk);">600g</div>
+              </div>
+              <div style="width: 0.5px; background: var(--color-fog);"></div>
+              <div style="text-align: center;">
+                <div style="font-family: 'Raleway', sans-serif; font-size: 8px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--color-stone);">Elaborado</div>
+                <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 13px; color: var(--color-graphite-dk); font-style: italic;">Hoy</div>
+              </div>
+              <div style="width: 0.5px; background: var(--color-fog);"></div>
+              <div style="text-align: center;">
+                <div style="font-family: 'Raleway', sans-serif; font-size: 8px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--color-stone);">Consumir</div>
+                <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 13px; color: var(--color-graphite-dk); font-style: italic;">3 días</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sello pequeño -->
+          <div class="stamp">
+            <div class="stamp-top">Hecho a mano</div>
+            <div class="stamp-main">uKKo</div>
+            <div class="stamp-line"></div>
+            <div class="stamp-bottom">Posadas · AR</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instagram post -->
+      <div class="app-card">
+        <div class="app-card-header">
+          <div class="app-card-title">Redes sociales</div>
+          <div class="app-card-desc">Instagram feed 1:1 · Stories 9:16 · Paleta neutra</div>
+        </div>
+        <div class="app-card-demo" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+          <!-- Post 1 oscuro -->
+          <div class="ig-post">
+            <span class="ig-bg-text">u</span>
+            <div class="ig-quote">"Del norte llega el trueno. Del horno, el pan."</div>
+            <div class="ig-brand">@ukkopanes</div>
+          </div>
+          <!-- Post 2 claro -->
+          <div class="ig-post" style="background: var(--color-flour); max-width: 200px; border: 1px solid var(--color-mist);">
+            <div style="font-family: 'Raleway', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--color-stone); margin-bottom: 12px; z-index:1;">Disponible hoy</div>
+            <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 900; color: var(--color-carbon); text-transform: lowercase; z-index:1;">Focaccia<br>de romero</div>
+            <div style="width: 30px; height: 0.5px; background: var(--color-fog); margin: 12px auto; z-index:1;"></div>
+            <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 13px; font-style: italic; color: var(--color-ash); z-index:1;">Aceite de oliva · sal gruesa</div>
+            <div class="ig-brand" style="color: var(--color-stone); margin-top: 16px;">@ukkopanes</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Papelería -->
+      <div class="app-card">
+        <div class="app-card-header">
+          <div class="app-card-title">Papelería & comunicaciones</div>
+          <div class="app-card-desc">Hoja membretada · Comprobante · Carta de productos</div>
+        </div>
+        <div class="app-card-demo">
+          <!-- Hoja membretada -->
+          <div style="border: 1px solid var(--color-mist); padding: 28px; background: white; width: 100%;">
+            <!-- Header membrete -->
+            <div style="display: flex; align-items: flex-start; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--color-mist); margin-bottom: 20px;">
+              <div>
+                <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 700; letter-spacing: 0.1em; color: var(--color-carbon); text-transform: lowercase;">uKKo panes</div>
+                <div style="font-size: 9px; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--color-stone); margin-top: 4px;">Pan artesanal · Posadas</div>
+              </div>
+<img src="ukko_logo_carbon.svg" width="50" height="50" style="display:block">
+            </div>
+            <!-- Contenido -->
+            <div style="font-size: 9px; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--color-stone); margin-bottom: 8px;">Encargo N° 042 — Marzo 2026</div>
+            <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; color: var(--color-graphite-md); line-height: 1.7; margin-bottom: 16px;">Estimado cliente, le confirmamos su encargo para el día de mañana. Por favor coordinar la retirada entre las 8 y las 12hs.</div>
+            <table style="width: 100%; font-size: 12px; border-collapse: collapse;">
+              <tr style="border-bottom: 1px solid var(--color-flour);">
+                <td style="padding: 8px 0; color: var(--color-graphite-dk);">Pan de masa madre (600g)</td>
+                <td style="padding: 8px 0; text-align: right; color: var(--color-graphite-md);">x2</td>
+                <td style="padding: 8px 0; text-align: right; color: var(--color-carbon); font-weight: 600;">$3.600</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-flour);">
+                <td style="padding: 8px 0; color: var(--color-graphite-dk);">Focaccia de romero</td>
+                <td style="padding: 8px 0; text-align: right; color: var(--color-graphite-md);">x1</td>
+                <td style="padding: 8px 0; text-align: right; color: var(--color-carbon); font-weight: 600;">$1.200</td>
+              </tr>
+              <tr>
+                <td colspan="2" style="padding: 10px 0 0; font-weight: 600; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-graphite-dk);">Total</td>
+                <td style="padding: 10px 0 0; text-align: right; font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 700; color: var(--color-carbon);">$4.800</td>
+              </tr>
+            </table>
+            <!-- Footer membrete -->
+            <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--color-mist); font-size: 9px; color: var(--color-stone); letter-spacing: 0.15em;">@ukkopanes · Posadas, Misiones, Argentina</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== MANIFESTO ===== -->
+<section class="manifesto-section" id="manifiesto">
+  <div class="manifesto-inner">
+    <p class="manifesto-label">07 — Manifiesto de marca</p>
+    <p class="manifesto-text">
+      Ukko es el dios nórdico del trueno,<br>
+      el que gobierna <em>el tiempo</em> y los cielos.<br><br>
+      Nosotros gobernamos <em>el tiempo del pan</em>:<br>
+      las horas de fermentación que no se apuran,<br>
+      las manos que dan forma a cada pieza,<br>
+      el ojo que sabe cuándo el horno está listo.
+    </p>
+    <div class="manifesto-divider"></div>
+    <div class="manifesto-values">
+      <div class="manifesto-value-item">
+        <div class="mv-number">01</div>
+        <div class="mv-title">Tiempo</div>
+        <div class="mv-desc">Nada se apura. La masa lo sabe antes que nosotros.</div>
+      </div>
+      <div class="manifesto-value-item">
+        <div class="mv-number">02</div>
+        <div class="mv-title">Manos</div>
+        <div class="mv-desc">Cada pieza formada a mano. Cada decisión tomada por una persona, no por una máquina.</div>
+      </div>
+      <div class="manifesto-value-item">
+        <div class="mv-number">03</div>
+        <div class="mv-title">Oficio</div>
+        <div class="mv-desc">Las manos aprenden lo que los ojos no ven todavía.</div>
+      </div>
+      <div class="manifesto-value-item">
+        <div class="mv-number">04</div>
+        <div class="mv-title">Origen</div>
+        <div class="mv-desc">Posadas, Misiones. Del norte argentino al mundo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER / ASSETS -->
+<div class="footer-section">
+  <div class="footer-inner">
+    <div class="footer-logo">ukko <strong>panes</strong></div>
+    <p class="footer-tagline">Brand Book · Versión 1.0 · 2026</p>
+
+    <div class="footer-meta">
+      <div class="footer-meta-item">
+        <div class="fm-label">Tipografía principal</div>
+        <div class="fm-value">Playfair Display</div>
+      </div>
+      <div class="footer-meta-item">
+        <div class="fm-label">Tipografía secundaria</div>
+        <div class="fm-value">Cormorant Garamond</div>
+      </div>
+      <div class="footer-meta-item">
+        <div class="fm-label">Color principal</div>
+        <div class="fm-value">#0A0A0A Carbón</div>
+      </div>
+      <div class="footer-meta-item">
+        <div class="fm-label">Color secundario</div>
+        <div class="fm-value">#E8E4DC Miga</div>
+      </div>
+      <div class="footer-meta-item">
+        <div class="fm-label">Instagram</div>
+        <div class="fm-value">@ukkopanes</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
