@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>uKKo — Lista de Precios · 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --carbon:    #0A0A0A;
+    --onix:      #141414;
+    --forja:     #391d1d;
+    --grafito-o: #2C2C2C;
+    --grafito:   #3D3D3D;
+    --grafito-m: #5A5A5A;
+    --ceniza:    #888880;
+    --piedra:    #B4B2A9;
+    --niebla:    #D0CCC4;
+    --neblina:   #E0DCD4;
+    --miga:      #E8E4DC;
+    --pan:       #F0EDE6;
+    --harina:    #F5F2EC;
+    --nieve:     #FAFAF7;
+    --brasa:     #C4622D;
+    --brasa-cl:  #E8916A;
+    --brasa-pal: #F5DDD0;
+    --brasa-os:  #8C3F18;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body:    'Cormorant Garamond', serif;
+    --font-ui:      'Raleway', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--miga);
+    color: var(--carbon);
+    font-family: var(--font-ui);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── LAYOUT ─── */
+  .page {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 56px 40px 80px;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 36px;
+    border-bottom: 1.5px solid var(--carbon);
+    margin-bottom: 52px;
+  }
+
+  .logo-wordmark {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: var(--carbon);
+    position: relative;
+    display: inline-block;
+  }
+
+  .logo-wordmark::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    right: -10px;
+    width: 8px;
+    height: 8px;
+    background: var(--brasa);
+    border-radius: 50%;
+  }
+
+  .logo-sub {
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grafito-m);
+    margin-top: 8px;
+  }
+
+  .header-right {
+    text-align: right;
+    padding-bottom: 4px;
+  }
+
+  .header-tag {
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--harina);
+    background: var(--brasa);
+    padding: 5px 12px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .header-title {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--carbon);
+    line-height: 1.1;
+  }
+
+  .header-date {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--grafito-m);
+    margin-top: 6px;
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 28px;
+  }
+
+  .section-label-text {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--harina);
+    background: var(--carbon);
+    padding: 6px 16px;
+    width: 200px;
+    text-align: center;
+    margin-right: 15px;
+  }
+
+  .section-label.light .section-label-text {
+    background: transparent;
+    color: var(--carbon);
+    border: 1.5px solid var(--carbon);
+  }
+
+  /* ─── PRODUCT GRID ─── */
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 4px;
+  }
+
+  /* ─── CARD ─── */
+  .card {
+    background: var(--harina);
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    min-height: 160px;
+    transition: background 0.18s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card:hover {
+    background: var(--nieve);
+  }
+
+  /* Accent bar on hover */
+  .card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--brasa);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.22s ease;
+  }
+
+  .card:hover::before {
+    transform: scaleY(1);
+  }
+
+  /* ─── PHOTO ─── */
+  .card-photo {
+    width: 180px;
+    height: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    background: var(--grafito-o);
+  }
+
+  .card-photo img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(15%);
+    transition: transform 0.35s ease, filter 0.35s ease;
+  }
+
+  .card:hover .card-photo img {
+    transform: scale(1.04);
+    filter: grayscale(0%);
+  }
+
+  /* ─── CARD CONTENT ─── */
+  .card-body {
+    padding: 20px 12px 16px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 14px;
+  }
+
+  .card-top {}
+
+  .card-code {
+    font-family: var(--font-ui);
+    font-size: 8.5px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--piedra);
+    margin-bottom: 5px;
+  }
+
+  .card-name {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--carbon);
+    line-height: 1.05;
+    margin-bottom: 6px;
+  }
+
+  .card-desc {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-style: italic;
+    color: var(--grafito);
+    line-height: 1.45;
+  }
+
+  /* ─── PRICES ─── */
+  .card-prices {
+    margin-top: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid var(--neblina);
+  }
+
+  .price-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .price-tag {
+    font-family: var(--font-ui);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--grafito-m);
+    width: 52px;
+  }
+
+  .price-val {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--carbon);
+    letter-spacing: -0.01em;
+  }
+
+  .price-val.efectivo {
+    color: var(--brasa);
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  .card-unid {
+    text-align: right;
+  }
+
+  .unid-number {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--carbon);
+    line-height: 1;
+  }
+
+  .unid-label {
+    font-family: var(--font-ui);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--grafito-m);
+    margin-top: 2px;
+  }
+
+  /* ─── SECTION SEPARATOR ─── */
+  .sep {
+    margin: 52px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .sep-line {
+    flex: 1;
+    height: 1px;
+    background: var(--niebla);
+  }
+
+  .sep-icon {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--niebla);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .sep-icon svg {
+    opacity: 0.35;
+  }
+
+  /* ─── LEGEND ─── */
+  .legend {
+    display: flex;
+    gap: 24px;
+    margin-top: 20px;
+    padding: 16px 20px;
+    background: var(--pan);
+    align-items: center;
+  }
+
+  .legend-title {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grafito-m);
+    margin-right: 4px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .legend-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .legend-dot.carbon { background: var(--carbon); }
+  .legend-dot.brasa  { background: var(--brasa); }
+
+  .legend-label {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--grafito);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ─── NOTE ─── */
+  .note-box {
+    margin-top: 48px;
+    padding: 22px 28px;
+    border-left: 3px solid var(--brasa);
+    background: var(--pan);
+  }
+
+  .note-box p {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--grafito);
+    line-height: 1.6;
+  }
+
+  .note-box strong {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--carbon);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1.5px solid var(--carbon);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .footer-left {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--grafito-o);
+    line-height: 1.6;
+  }
+
+  .footer-center {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--carbon);
+    position: relative;
+    display: inline-block;
+  }
+
+  .footer-center::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: -8px;
+    width: 5px;
+    height: 5px;
+    background: var(--brasa);
+    border-radius: 50%;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-contact-label {
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--carbon);
+    margin-bottom: 4px;
+  }
+
+  .footer-insta {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--brasa);
+    letter-spacing: 0.08em;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 680px) {
+    .page { padding: 32px 16px 56px; }
+    .header { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .header-right { text-align: left; }
+    .product-grid { grid-template-columns: 1fr; }
+    .product-grid .card:last-child:nth-child(odd) { grid-column: auto; }
+    .card { grid-template-columns: 120px 1fr; min-height: 140px; }
+    .card-photo { width: 120px; min-height: 140px; }
+    .card-name { font-size: 16px; }
+    .footer { flex-direction: column; gap: 20px; align-items: flex-start; }
+    .footer-right { text-align: left; }
+    .footer-center { display: none; }
+  }
+
+  @media print {
+    body { background: white; }
+    .card { background: white; break-inside: avoid; }
+    .page { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div>
+      <div class="logo-wordmark"><img src="logo.svg" width="120px" height="120px" alt=""></div>
+      <div class="logo-sub">Proveedor mayorista · Posadas, Misiones</div>
+    </div>
+    <div class="header-right">
+      <div class="header-tag">Lista de precios</div>
+      <div class="header-title">Catálogo<br>de productos</div>
+      <div class="header-date">Marzo · 2026</div>
+    </div>
+  </header>
+
+  <!-- ══════ CAJA ══════ -->
+  <div class="section-label">
+    <span class="section-label-text">Caja</span>
+    <img src="caja.png" width="120px" height="90px" alt="">
+  </div>
+
+  <div class="product-grid">
+
+    <!-- Classic Buns -->
+    <div class="card">
+      <div class="card-photo">
+        <!-- Reemplazá src con la foto real -->
+        <img src="classic_bun.png" alt="Classic Buns" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-code">UKK-001</div>
+          <div class="card-name">Classic Buns</div>
+          <div class="card-desc">Masa de Viena enriquecida con manteca, leche y azúcar. Miga blanca, suave y aireada. Corteza fina, dorada y brillante. La base que no falla.</div>
+        </div>
+        <div class="card-prices">
+          <div class="price-group">
+            <div class="price-row">
+              <span class="price-tag">Lista</span>
+              <span class="price-val">$26.500</span>
+            </div>
+            <div class="price-row">
+              <span class="price-tag">Efectivo</span>
+              <span class="price-val efectivo">$24.000</span>
+            </div>
+          </div>
+          <div class="card-unid">
+            <div class="unid-number">48</div>
+            <div class="unid-label">unidades</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buns de Sésamo -->
+    <div class="card">
+      <div class="card-photo">
+        <img src="sesame_bun.png" alt="Buns de Sésamo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-code">UKK-002</div>
+          <div class="card-name">Buns de Sésamo</div>
+          <div class="card-desc">Viena enriquecida con manteca, leche y azúcar, coronada con semillas de sésamo. Miga blanca y aireada, corteza fina y dorada. Una capa que suma textura y un toque tostado que cambia el mordisco sin forzarlo.</div>
+        </div>
+        <div class="card-prices">
+          <div class="price-group">
+            <div class="price-row">
+              <span class="price-tag">Lista</span>
+              <span class="price-val">$29.000</span>
+            </div>
+            <div class="price-row">
+              <span class="price-tag">Efectivo</span>
+              <span class="price-val efectivo">$26.500</span>
+            </div>
+          </div>
+          <div class="card-unid">
+            <div class="unid-number">48</div>
+            <div class="unid-label">unidades</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Potato Rolls -->
+    <div class="card">
+      <div class="card-photo">
+        <img src="potato_roll.png" alt="Potato Rolls" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-code">UKK-003</div>
+          <div class="card-name">Potato Rolls</div>
+          <div class="card-desc">Viena enriquecida con el agregado de puré de papa. Miga extra suave y húmeda, con un tono propio que la distingue. Corteza fina de terminación mate. Mayor jugosidad y ternura prolongada.</div>
+        </div>
+        <div class="card-prices">
+          <div class="price-group">
+            <div class="price-row">
+              <span class="price-tag">Lista</span>
+              <span class="price-val">$29.000</span>
+            </div>
+            <div class="price-row">
+              <span class="price-tag">Efectivo</span>
+              <span class="price-val efectivo">$26.500</span>
+            </div>
+          </div>
+          <div class="card-unid">
+            <div class="unid-number">48</div>
+            <div class="unid-label">unidades</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brioche -->
+    <div class="card">
+      <div class="card-photo">
+        <img src="brioche.png" alt="Brioche" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-code">UKK-004</div>
+          <div class="card-name">Brioche</div>
+          <div class="card-desc">Mayor contenido de manteca y azúcar, hidratado con huevos. Miga hilada y amarilla, corteza de color intenso y brillante. Más untuoso, con un perfil dulce pronunciado que pide ser notado.</div>
+        </div>
+        <div class="card-prices">
+          <div class="price-group">
+            <div class="price-row">
+              <span class="price-tag">Lista</span>
+              <span class="price-val">$31.500</span>
+            </div>
+            <div class="price-row">
+              <span class="price-tag">Efectivo</span>
+              <span class="price-val efectivo">$29.000</span>
+            </div>
+          </div>
+          <div class="card-unid">
+            <div class="unid-number">48</div>
+            <div class="unid-label">unidades</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cheese Buns -->
+    <div class="card">
+      <div class="card-photo">
+        <img src="cheese_bun.png" alt="Cheese Buns" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-code">UKK-005</div>
+          <div class="card-name">Cheese Buns</div>
+          <div class="card-desc">Viena enriquecida con manteca, leche y azúcar, terminada con parmesano gratinado en superficie. Miga blanca y aireada, corteza fina con un crocante de queso que define el bocado desde arriba.</div>
+        </div>
+        <div class="card-prices">
+          <div class="price-group">
+            <div class="price-row">
+              <span class="price-tag">Lista</span>
+              <span class="price-val">$31.500</span>
+            </div>
+            <div class="price-row">
+              <span class="price-tag">Efectivo</span>
+              <span class="price-val efectivo">$29.000</span>
+            </div>
+          </div>
+          <div class="card-unid">
+            <div class="unid-number">48</div>
+            <div class="unid-label">unidades</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Baguettin -->
+    <div class="card">
+      <div class="card-photo">
+        <img src="baguettin.png" alt="Baguettin" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-code">UKK-006</div>
+          <div class="card-name">Baguettin</div>
+          <div class="card-desc">Masa de Viena en formato alargado. Miga suave y aireada, corteza fina y tierna que acompaña sin romper la estructura. Para Philly, milanesas y sándwiches que exigen contundencia real.</div>
+        </div>
+        <div class="card-prices">
+          <div class="price-group">
+            <div class="price-row">
+              <span class="price-tag">Lista</span>
+              <span class="price-val">$19.500</span>
+            </div>
+            <div class="price-row">
+              <span class="price-tag">Efectivo</span>
+              <span class="price-val efectivo">$18.000</span>
+            </div>
+          </div>
+          <div class="card-unid">
+            <div class="unid-number">32</div>
+            <div class="unid-label">unidades</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sliders Papa -->
+    <div class="card">
+      <div class="card-photo">
+        <img src="sliders.png" alt="Sliders Papa" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-code">UKK-007</div>
+          <div class="card-name">Sliders Papa</div>
+          <div class="card-desc">Potato rolls en formato pequeño, en planchas encadenadas de 12 unidades. Miga extra suave y húmeda, corteza fina de terminación mate. Para mini hamburguesas, pernil y vitel toné.</div>
+        </div>
+        <div class="card-prices">
+          <div class="price-group">
+            <div class="price-row">
+              <span class="price-tag">Lista</span>
+              <span class="price-val">$31.500</span>
+            </div>
+            <div class="price-row">
+              <span class="price-tag">Efectivo</span>
+              <span class="price-val efectivo">$29.000</span>
+            </div>
+          </div>
+          <div class="card-unid">
+            <div class="unid-number">96</div>
+            <div class="unid-label">unidades</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /product-grid CAJA -->
+
+  <div class="legend">
+    <span class="legend-title">Referencias —</span>
+    <div class="legend-item">
+      <div class="legend-dot carbon"></div>
+      <span class="legend-label">Precio lista</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot brasa"></div>
+      <span class="legend-label">Precio efectivo</span>
+    </div>
+  </div>
+
+  <!-- SEPARATOR -->
+  <div class="sep">
+    <div class="sep-line"></div>
+    <div class="sep-icon">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+        <circle cx="6" cy="6" r="5" stroke="#888880" stroke-width="1"/>
+        <circle cx="6" cy="6" r="1.5" fill="#888880"/>
+      </svg>
+    </div>
+    <div class="sep-line"></div>
+  </div>
+
+  <!-- ══════ CANASTO BATEA ══════ -->
+  <div class="section-label light">
+    <span class="section-label-text">Canasto Batea</span>
+    <img src="batea.png" width="110px" height="110px" alt="">
+  </div>
+
+  <div class="product-grid">
+
+    <div class="card">
+      <div class="card-photo">
+        <img src="classic_bun.png" alt="Classic Buns" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-code">UKK-001</div>
+          <div class="card-name">Classic Buns</div>
+          <div class="card-desc">Masa de Viena enriquecida con manteca, leche y azúcar. Miga blanca, suave y aireada. Corteza fina, dorada y brillante. La base que no falla.</div>
+        </div>
+        <div class="card-prices">
+          <div class="price-group">
+            <div class="price-row"><span class="price-tag">Lista</span><span class="price-val">$33.000</span></div>
+            <div class="price-row"><span class="price-tag">Efectivo</span><span class="price-val efectivo">$30.000</span></div>
+          </div>
+          <div class="card-unid"><div class="unid-number">60</div><div class="unid-label">unidades</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-photo">
+        <img src="sesame_bun.png" alt="Buns de Sésamo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-code">UKK-002</div>
+          <div class="card-name">Buns de Sésamo</div>
+          <div class="card-desc">Viena enriquecida con manteca, leche y azúcar, coronada con semillas de sésamo. Miga blanca y aireada, corteza fina y dorada. Una capa que suma textura y un toque tostado que cambia el mordisco sin forzarlo.</div>
+        </div>
+        <div class="card-prices">
+          <div class="price-group">
+            <div class="price-row"><span class="price-tag">Lista</span><span class="price-val">$36.000</span></div>
+            <div class="price-row"><span class="price-tag">Efectivo</span><span class="price-val efectivo">$33.000</span></div>
+          </div>
+          <div class="card-unid"><div class="unid-number">60</div><div class="unid-label">unidades</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-photo">
+        <img src="potato_roll.png" alt="Potato Rolls" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-code">UKK-003</div>
+          <div class="card-name">Potato Rolls</div>
+          <div class="card-desc">Viena enriquecida con el agregado de puré de papa. Miga extra suave y húmeda, con un tono propio que la distingue. Corteza fina de terminación mate. Mayor jugosidad y ternura prolongada.</div>
+        </div>
+        <div class="card-prices">
+          <div class="price-group">
+            <div class="price-row"><span class="price-tag">Lista</span><span class="price-val">$36.000</span></div>
+            <div class="price-row"><span class="price-tag">Efectivo</span><span class="price-val efectivo">$33.000</span></div>
+          </div>
+          <div class="card-unid"><div class="unid-number">60</div><div class="unid-label">unidades</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-photo">
+        <img src="brioche.png"Brioche" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-code">UKK-004</div>
+          <div class="card-name">Brioche</div>
+          <div class="card-desc">Mayor contenido de manteca y azúcar, hidratado con huevos. Miga hilada y amarilla, corteza de color intenso y brillante. Más untuoso, con un perfil dulce pronunciado que pide ser notado.</div>
+        </div>
+        <div class="card-prices">
+          <div class="price-group">
+            <div class="price-row"><span class="price-tag">Lista</span><span class="price-val">$39.000</span></div>
+            <div class="price-row"><span class="price-tag">Efectivo</span><span class="price-val efectivo">$36.000</span></div>
+          </div>
+          <div class="card-unid"><div class="unid-number">60</div><div class="unid-label">unidades</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-photo">
+        <img src="cheese_bun.png" alt="Cheese Buns" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-code">UKK-005</div>
+          <div class="card-name">Cheese Buns</div>
+          <div class="card-desc">Viena enriquecida con manteca, leche y azúcar, terminada con parmesano gratinado en superficie. Miga blanca y aireada, corteza fina con un crocante de queso que define el bocado desde arriba.</div>
+        </div>
+        <div class="card-prices">
+          <div class="price-group">
+            <div class="price-row"><span class="price-tag">Lista</span><span class="price-val">$39.000</span></div>
+            <div class="price-row"><span class="price-tag">Efectivo</span><span class="price-val efectivo">$36.000</span></div>
+          </div>
+          <div class="card-unid"><div class="unid-number">60</div><div class="unid-label">unidades</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-photo">
+        <img src="baguettin.png" alt="Baguettin" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-code">UKK-006</div>
+          <div class="card-name">Baguettin</div>
+          <div class="card-desc">Masa de Viena en formato alargado. Miga suave y aireada, corteza fina y tierna que acompaña sin romper la estructura. Para Philly, milanesas y sándwiches que exigen contundencia real.</div>
+        </div>
+        <div class="card-prices">
+          <div class="price-group">
+            <div class="price-row"><span class="price-tag">Lista</span><span class="price-val">$24.000</span></div>
+            <div class="price-row"><span class="price-tag">Efectivo</span><span class="price-val efectivo">$22.000</span></div>
+          </div>
+          <div class="card-unid"><div class="unid-number">40</div><div class="unid-label">unidades</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-photo">
+        <img src="sliders.png" alt="Sliders Papa" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-code">UKK-007</div>
+          <div class="card-name">Sliders Papa</div>
+          <div class="card-desc">Potato rolls en formato pequeño, en planchas encadenadas de 12 unidades. Miga extra suave y húmeda, corteza fina de terminación mate. Para mini hamburguesas, pernil y vitel toné.</div>
+        </div>
+        <div class="card-prices">
+          <div class="price-group">
+            <div class="price-row"><span class="price-tag">Lista</span><span class="price-val">$39.000</span></div>
+            <div class="price-row"><span class="price-tag">Efectivo</span><span class="price-val efectivo">$36.000</span></div>
+          </div>
+          <div class="card-unid"><div class="unid-number">120</div><div class="unid-label">unidades</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /product-grid CANASTO BATEA -->
+
+  <div class="legend">
+    <span class="legend-title">Referencias —</span>
+    <div class="legend-item">
+      <div class="legend-dot carbon"></div>
+      <span class="legend-label">Precio lista</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot brasa"></div>
+      <span class="legend-label">Precio efectivo</span>
+    </div>
+  </div>
+
+  <!-- NOTE -->
+  <div class="note-box">
+    <p><strong>Consistencia que no negocia.</strong> Cada pedido a tiempo, cada bandeja igual a la anterior. Precios válidos para la presente temporada. Consultar disponibilidad para volúmenes especiales.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">
+      Proveedor de buns · Posadas, Misiones<br>
+      Entrega diaria · Sin sorpresas
+    </div>
+    <div class="footer-center">uKKo</div>
+    <div class="footer-right">
+      <div class="footer-contact-label">Pedidos por WhatsApp</div>
+      <div class="footer-insta">@ukkopanes</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
